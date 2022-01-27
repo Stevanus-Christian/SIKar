@@ -79,7 +79,7 @@
                         </li>
                         <li>
                             <a href="datauser.php">
-                                <i class="fas fa-table"></i>Data user</a>
+                                <i class="fas fa-table"></i>Data User</a>
                         </li>
                         <li>
                             <a href="datajabatan.php">
@@ -91,7 +91,7 @@
                         </li>
                        <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-table"></i>data Keterangan
+                                <i class="fas fa-table"></i>Data Keterangan
                             </a>
                         </li>
                        

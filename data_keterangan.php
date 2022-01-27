@@ -68,7 +68,7 @@ session_start();
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="admin2.php">
-                            <h1>admin</h1>
+                            <h1>Admin</h1>
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">

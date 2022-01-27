@@ -106,7 +106,7 @@ session_start();
                         </li>
                        <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-table"></i>data Keterangan
+                                <i class="fas fa-table"></i>Data Keterangan
                             </a>
                         </li>
                        
@@ -150,7 +150,7 @@ session_start();
                         </li>
                         <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-table"></i>data Keterangan
+                                <i class="fas fa-table"></i>Data Keterangan
                             </a>
                         </li>
                         <!--<li>
@@ -258,7 +258,7 @@ session_start();
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Nip</th>
+                                                <th>NIP</th>
                                                 <th>Nama</th>
                                                 <th>Tempat & tanggal lahir</th>
                                                 <th class="text-right">Jenis Kelamin</th>
