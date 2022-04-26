@@ -23,12 +23,8 @@ if($ketemu>0){
   $_SESSION['fotosi'] = $b['foto'];
   header("location: index.php?m=awal");
 }else{
-  
-  echo '<script language="javascript">';
-      echo 'alert ("Username/Password ada yang salah, atau akun anda belum Aktif")';
-  echo '</script>';
-  header("location: login_karyawan.php");
+  echo "<script>alert('Username atau Password anda Salah, atau akun anda belum Aktif!') </script>";
+	echo "<script>window.location.href = \"login_karyawan.php\" </script>";
 }
-
 
 ?>

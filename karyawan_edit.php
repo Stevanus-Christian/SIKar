@@ -69,12 +69,12 @@ session_start();
     
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">username</label>
+    <label for="exampleInputEmail1">Username</label>
   <input type="text" class="form-control" name="username" autocomplete="off" value="<?php echo $d['username'];?>">
     
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">password</label>
+    <label for="exampleInputEmail1">Password</label>
   <input type="text" class="form-control"  name="password" autocomplete="off">
     
   </div>

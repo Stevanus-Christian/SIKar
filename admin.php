@@ -67,7 +67,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="admin2.php">
+                            <a class="js-arrow" href="admin.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 

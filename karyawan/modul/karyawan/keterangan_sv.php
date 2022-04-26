@@ -35,7 +35,7 @@ if ($query) {
 	echo "<script>alert('Anda sudah memberi keterangan') </script>";
 	echo '<script>window.history.back()</script>';
 }else{
-	echo "gagal";
+	echo "Gagal memberi keterangan";
 }
 
  ?>

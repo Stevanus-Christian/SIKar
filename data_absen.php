@@ -146,7 +146,7 @@ error_reporting(0);
                         </li>
                           <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-table"></i>data Keterangan
+                                <i class="fas fa-table"></i>Data Keterangan
                             </a>
                         </li>
                         <li>
@@ -240,25 +240,22 @@ error_reporting(0);
                             <div class="col-lg-6">
                                 <!-- END USER DATA-->
                             </div>
-                            <div class="col-lg-6">
 
-                                <!--  END TOP CAMPAIGN-->
+
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- END DATA TABLE -->
+
                             </div>
                         </div>
                         <div class="row m-t-30">
                             <div class="col-md-12">
-                                <!-- END DATA TABLE-->
+
                             </div>
                         </div>
-                        <!--modal -->
-                      
-                            
-                        <!-- END MODAL-->
+
 
             
                 </div>

@@ -10,9 +10,6 @@ error_reporting(0);
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
     <title>Dashboard</title>
@@ -150,15 +147,6 @@ error_reporting(0);
                                                     <a href="?m=karyawan&s=profil">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
-                                                <!--<div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>-->
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -197,9 +185,7 @@ error_reporting(0);
                                 <table class="table table-borderless table-striped table-earning" >
                                         
                                         <tbody>
-                                              <tr>
-                                                  <td><input type="text" readonly="" name="id"></td>
-                                              </tr>
+                                              <br>
                                             <tr>
                                                 <td>NIP</td>
                                                 <td>
@@ -240,17 +226,30 @@ error_reporting(0);
                                            </tr>
 
                                             <tr>
-                                                <td><button type="submit" name="simpan" class="btn btn-primary">Beri Keterangan</button></td>
-                                                <td><input type="reset" name="" value="Batal" class="btn btn-danger"></td>
+                                                <td><button type="submit" name="simpan" class="btn btn-primary">Simpan</button></td>
+                                                <td><input type="reset" name="" value="Hapus" class="btn btn-danger"></td>
                                             </tr>
-                                            
                                       </tbody>
                                     </table>
                                         </div>
                             </form>
-                                    
-                                </div>    
+                                </div>   
                         </div>
+                        <table class="table table-borderless table-striped table-earning" >
+                                        
+                                        <tbody>
+                                            <tr>
+                                               
+                                                <td>
+                                                
+                                                <a href="index.php"><button class="btn btn-primary">Batal</button>
+                                            </td>
+                                            </tr>
+                                           
+                                           
+         
+                                      </tbody>
+                        </table> 
                      <div class="row">
                            <div class="table-responsive table--no-card m-b-30">
 
@@ -269,9 +268,6 @@ error_reporting(0);
                         
                         <div class="header-desktop">
                             <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
                             </div>
                         </div>
                     </div>

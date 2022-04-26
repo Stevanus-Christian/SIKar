@@ -259,26 +259,22 @@ error_reporting(0);
             <!-- End Modal -->
                         <div class="row">
                             <div class="col-lg-6">
-                                <!-- END USER DATA-->
+
                             </div>
                             <div class="col-lg-6">
-                                <!--  END TOP CAMPAIGN-->
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- END DATA TABLE -->
+
                             </div>
                         </div>
                         <div class="row m-t-30">
                             <div class="col-md-12">
-                                <!-- END DATA TABLE-->
+
                             </div>
                         </div>
-                        <!--modal -->
-                      
-                            
-                        <!-- END MODAL-->
 
             
                 </div>

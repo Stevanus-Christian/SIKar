@@ -10,9 +10,6 @@ error_reporting(0);
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
     <title>Beranda Karyawan</title>
@@ -148,15 +145,6 @@ error_reporting(0);
                                                     <a href="?m=karyawan&s=profil">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
-                                                <!--<div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>-->
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -241,7 +229,7 @@ error_reporting(0);
                                                
                                                 <td>
                                                 
-                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika tidak hadir / absen</button></a>
+                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika anda Tidak Hadir / Absen</button></a>
                                             </td>
                                             </tr>
                                            

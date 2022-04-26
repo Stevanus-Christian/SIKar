@@ -10,9 +10,6 @@ error_reporting(0);
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
     <title>Ubah Data</title>
@@ -148,15 +145,6 @@ error_reporting(0);
                                                     <a href="?m=karyawan&s=profil">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
-                                                <!--<div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>-->
                                             <div class="account-dropdown__footer">
                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
@@ -179,7 +167,7 @@ error_reporting(0);
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1" style="text-align: center;">Profil anda <?php echo $_SESSION['namasi']; ?></h2>
+                                    <h2 class="title-1" style="text-align: center;">Profil Anda <?php echo $_SESSION['namasi']; ?></h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
                                         
                                 </div>
@@ -279,7 +267,7 @@ error_reporting(0);
                                            </tr>
 
                                            <tr>
-                                           	<td>Nomor telepon</td>
+                                           	<td>Nomor Telepon</td>
                                            	<td>
                                            		<input type="text" name="no_tel" value="<?php echo $r['no_tel'];?>">
                                            		</td>
@@ -344,9 +332,6 @@ error_reporting(0);
                         
                         <div class="header-desktop">
                             <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
                             </div>
                         </div>
                     </div>
