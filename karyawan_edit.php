@@ -63,42 +63,65 @@ session_start();
 </head>
 <body>
 <form action="proedit_karyawan.php" method="POST" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="exampleInputEmail1">NIP</label>
-  <input type="text" class="form-control" readonly="" name="id_karyawan" autocomplete="off" value="<?php echo $d['id_karyawan'];?>">
-    
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-  <input type="text" class="form-control" name="username" autocomplete="off" value="<?php echo $d['username'];?>">
-    
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Password</label>
-  <input type="text" class="form-control"  name="password" autocomplete="off">
-    
-  </div>
+  <table class="table table-borderless table-striped table-earning" >
+                                        
+                                        <tbody>
+                                              
+                                            <tr>
+                                                <td>NIP</td>
+                                                <td>
+                                                <input type="text" class="form-control" readonly="" name="id_karyawan" autocomplete="off" value="<?php echo $d['id_karyawan'];?>">
+                                                
+                                                
+                                                
+                                            </td>
+                                            </tr>
+                                         
+                                            <tr>
+                                                <td>Username</td>
+                                                <td>
+                                                <input type="text" class="form-control" name="username" autocomplete="off" value="<?php echo $d['username'];?>">
+                                                	</td>
+                                            </tr>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Nama</label>
-    <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $d['nama'];?>">
-  </div>
-    <div class="form-group">
-    <label for="exampleInputPassword1">Tempat dan Tanggal Lahir</label>
-    <input type="text" class="form-control" name="tmp_tgl_lahir" autocomplete="off" value="<?php echo $d['tmp_tgl_lahir'];?>">
-  </div>
-    <div class="form-group">
-    <label for="exampleInputPassword1">Jenis Kelamin</label>
-      <select class="form-control" name="jenkel">
-                                                    <option><?php echo $d['jenkel']; ?></option>
+                                            <tr>
+                                                <td>Password</td>
+                                                <td>
+                                                <input type="text" class="form-control"  name="password" autocomplete="off">
+                                                	</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Nama</td>
+                                                <td>
+                                                <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $d['nama'];?>">
+                                                	</td>
+                                            </tr>
+                                            
+
+                                            <tr>
+                                            	<td>Tempat & tanggal lahir</td>
+                                            	<td>
+                                              <input type="text" class="form-control" name="tmp_tgl_lahir" autocomplete="off" value="<?php echo $d['tmp_tgl_lahir'];?>">
+                                            		</td>
+                                            </tr>
+
+                                            <TR>
+                                            	<td>Jenis Kelamin</td>
+                                            	<td>
+                                            		 <select select class="form-control" name="jenkel">
+                                                    <option value="<?php echo $r['jenkel']; ?>"><?php echo $r['jenkel']; ?></option>
                                                     <option>Laki-laki</option>
                                                     <option>Perempuan</option>
                                                 </select>
-  </div>
-    <div class="form-group">
-    <label for="exampleInputPassword1">Agama</label>
-    <select class="form-control" name="agama">
-    <option><?php echo $d['agama']; ?></option>
+                                            		</td>
+                                            </TR>
+
+                                             <tr>
+                                                <td>Agama</td>
+                                                <td>
+                                                	  <select  select class="form-control" name="agama">
+    											<option value="<?php echo $r['agama']; ?>"><?php echo $r['agama']; ?></option>
                                                         <option>Islam</option>
                                                         <option>Kristen</option>
                                                         <option>Katholik</option>
@@ -106,20 +129,26 @@ session_start();
                                                         <option>Buddha</option>
                                                         <option>KongHuCu</option>
                                                     </select>
-  </div>
-    <div class="form-group">
-    <label for="exampleInputPassword1">Alamat</label>
-    <textarea autocomplete="off" class="form-control" name="alamat" value="<?php echo $d['alamat'];?>"></textarea>
-  
-  </div>
-    <div class="form-group">
-    <label for="exampleInputPassword1">Telepon</label>
-   <input type="text" class="form-control"  name="no_tel" value="<?php echo $d['no_tel'];?>">
-  </div>
-    <div class="form-group">
-    <label for="exampleInputPassword1">Jabatan</label>
-                                                <select class="form-control" name="jabatan">
-                                                <?php 
+                                                	</td>
+                                            </tr>
+
+                                           <tr>
+                                              <td>Alamat</td>
+                                              <textarea autocomplete="off" class="form-control" name="alamat" value="<?php echo $d['alamat'];?>"></textarea>
+                                           </tr>
+
+                                           <tr>
+                                           	<td>Nomor Telepon</td>
+                                           	<td>
+                                             <input type="text" class="form-control"  name="no_tel" value="<?php echo $d['no_tel'];?>">
+                                           		</td>
+                                           </tr>
+
+                                           <tr>
+                                           	<td>Jabatan</td>
+                                           	<td>
+                                           		<select class="form-control" name="jabatan">
+                                               <?php 
 
                                                 include 'koneksi.php';
 
@@ -130,35 +159,46 @@ session_start();
                                                 $no = 0;
 
                                                 while ($data = mysqli_fetch_array($hasil)) {
-                                                    
+    
                                                 $no++;
-                                                
 
-                                                 ?>
-                                                <option value="<?php echo $data['jabatan'];?>"><?php echo $data['jabatan']; ?></option>
-                                                <?php } ?>
-                                                   
+
+                                              ?>
+                                               <option value="<?php echo $data['jabatan'];?>"><?php echo $data['jabatan']; ?></option>
+                                                <?php } ?>    
                                                 </select>
- <div class="form-group">
-    <label for="exampleInputPassword1">Foto</label><br>
-  <?php 
+                                           		 </td>
+                                           </tr>
+
+                                           <tr>
+                                           	<td>Foto</td>
+                                           	<td><?php 
             if ($d['foto']!=''){
                           echo "<img src=\"images/$d[foto]\" height=150 />";  
                         }
                         else{
                           echo "tidak ada gambar";
                         }
-   ?>
-  </div>
+   ?></td>
+                                           </tr>
 
-  <div class="form-group">
-                    <label>FOTO</label>
-                    <input type="checkbox" name="ubahfoto" value="true"> Ceklis jika ingin mengubah foto !
+                                           <tr>
+                                           	<td> <label> Foto </label></td>
+                                           	<td> <input type="checkbox" name="ubahfoto" value="true"> Ceklis jika ingin mengubah foto !
                     <br>
-                    <input type="file" name="inpfoto">
-                  </div>
+                    <input type="file" name="inpfoto"></td>
+                                           </tr>
+                                          
+                   
 
-  <button type="submit" class="btn btn-primary" name="ubahdata">Ubah Data</button>
+                                            <tr>
+                                                <td><input type="submit" name="ubahdata" class="btn btn-primary" value="Ubah Data"></td>
+                                               
+                                            </tr>
+                                            
+                                      </tbody>
+                                    </table>
+
 </form>
 </body>
 </html>

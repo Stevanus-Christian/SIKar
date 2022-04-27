@@ -197,9 +197,19 @@ error_reporting(0);
                                                 <td><input type="text" class="form-control" name="nama" autocomplete="off" readonly="" value="<?php echo $_SESSION['namasi']; ?>"></td>
                                             </tr>
 
-                                             <tr>
+                                            <tr>
+                                                <td>Hari</td>
+                                                <td><input type="text" class="form-control" value="<?php echo date('l' ); ?>" name="hari" readonly="" ></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>Tanggal</td>
+                                                <td><input type="text" class="form-control" value="<?php echo date('d-m-Y' ); ?>" name="tanggal" readonly="" ></td>
+                                            </tr>
+
+                                            <tr>
                                                 <td>Waktu</td>
-                                                <td><input type="text" class="form-control" value="<?php echo date('l, d-m-Y h:i:s a' ); ?>" name="waktu" readonly="" ></td>
+                                                <td><input type="text" class="form-control" value="<?php echo date('h:i:s A' ); ?>" name="waktu" readonly="" ></td>
                                             </tr>
 
                                            <tr>

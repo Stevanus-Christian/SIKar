@@ -167,7 +167,7 @@ error_reporting(0);
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1" style="text-align: center;">Profil Anda <?php echo $_SESSION['namasi']; ?></h2>
+                                    <h2 class="title-1" style="text-align: center;">Profil <?php echo $_SESSION['namasi']; ?></h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
                                         
                                 </div>
@@ -197,7 +197,7 @@ error_reporting(0);
                                             <tr>
                                                 <td>NIP</td>
                                                 <td>
-                                                	<input type="text" value="<?php echo $r['id_karyawan'];?>" name="id_karyawan">
+                                                	<input type="text" class="form-control" value="<?php echo $r['id_karyawan'];?>" name="id_karyawan">
                                                 
                                                 
                                                 
@@ -207,21 +207,21 @@ error_reporting(0);
                                             <tr>
                                                 <td>Nama</td>
                                                 <td>
-                                                	<input type="text" name="nama" value="<?php echo $r['nama'];?>">
+                                                	<input type="text" class="form-control" name="nama" value="<?php echo $r['nama'];?>">
                                                 	</td>
                                             </tr>
                                          
                                             <tr>
                                                 <td>Username</td>
                                                 <td>
-                                                	<input type="text" name="username" value="<?php echo $r['username'];?>">
+                                                	<input type="text" class="form-control" name="username" value="<?php echo $r['username'];?>">
                                                 	</td>
                                             </tr>
 
                                             <tr>
                                                 <td>Password</td>
                                                 <td>
-                                                	<input type="text" name="password">
+                                                	<input type="text" class="form-control" name="password">
                                                 	</td>
                                             </tr>
 
@@ -231,14 +231,14 @@ error_reporting(0);
                                             <tr>
                                             	<td>Tempat & tanggal lahir</td>
                                             	<td>
-                                            		<input type="text" value="<?php echo $r['tmp_tgl_lahir'];?>" name="tmp_tgl_lahir">
+                                            		<input type="text" class="form-control" value="<?php echo $r['tmp_tgl_lahir'];?>" name="tmp_tgl_lahir">
                                             		</td>
                                             </tr>
 
                                             <TR>
                                             	<td>Jenis Kelamin</td>
                                             	<td>
-                                            		 <select name="jenkel">
+                                            		 <select class="form-control" name="jenkel">
                                                     <option value="<?php echo $r['jenkel']; ?>"><?php echo $r['jenkel']; ?></option>
                                                     <option>Laki-laki</option>
                                                     <option>Perempuan</option>
@@ -249,7 +249,7 @@ error_reporting(0);
                                              <tr>
                                                 <td>Agama</td>
                                                 <td>
-                                                	  <select  name="agama">
+                                                	  <select class="form-control" name="agama">
     											<option value="<?php echo $r['agama']; ?>"><?php echo $r['agama']; ?></option>
                                                         <option>Islam</option>
                                                         <option>Kristen</option>
@@ -263,13 +263,13 @@ error_reporting(0);
 
                                            <tr>
                                               <td>Alamat</td>
-                                              <td><input type="text" name="alamat" value="<?php echo $r['alamat'];?>"></td>
+                                              <td><textarea autocomplete="off" class="form-control" name="alamat" value="<?php echo $r['alamat'];?>"></textarea></td>
                                            </tr>
 
                                            <tr>
                                            	<td>Nomor Telepon</td>
                                            	<td>
-                                           		<input type="text" name="no_tel" value="<?php echo $r['no_tel'];?>">
+                                           		<input type="text" class="form-control" name="no_tel" value="<?php echo $r['no_tel'];?>">
                                            		</td>
                                            </tr>
 

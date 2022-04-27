@@ -215,7 +215,7 @@ error_reporting(0);
                                             </tr>
 
                                             <tr>
-                                            	<td>Tempat & tanggal lahir</td>
+                                            	<td>Tempat & Tanggal Lahir</td>
                                             	<td><?php echo $r['tmp_tgl_lahir'];?></td>
                                             </tr>
 
