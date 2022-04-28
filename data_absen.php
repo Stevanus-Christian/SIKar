@@ -78,7 +78,7 @@ error_reporting(0);
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="admin2.php">
+                            <a class="js-arrow" href="admin.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 
@@ -124,7 +124,7 @@ error_reporting(0);
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="admin2.php">
+                            <a class="js-arrow" href="admin.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                           
                         </li>
@@ -171,7 +171,7 @@ error_reporting(0);
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
-                           
+                            <a href="export_excel.php"><button class="btn btn-success" onclick="return confirm('Export data ke Microsoft Excel?');">Export Data</button></a>
                         </div>
                     </div>
                 </div>
@@ -180,12 +180,9 @@ error_reporting(0);
 
             <!-- MAIN CONTENT-->
 
-            <div class="main-content">
+            <div class="main-content"> 
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                     
-                        <div class="row">
-
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -193,6 +190,8 @@ error_reporting(0);
                                                 <th>No</th>
                                                 <th>NIP</th>
                                                 <th>Nama</th>
+                                                <th>Hari</th>
+                                                <th>Tanggal</th>
                                                 <th>Waktu</th>
                                                 <th>Aksi</th>
                                                 
@@ -213,9 +212,9 @@ error_reporting(0);
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $row['id_karyawan']; ?></td>
                                                 <td><?php echo $row ['nama']; ?></td>
-                                                <td><?php echo $row['waktu']; ?></td>
-                                                
-                                                    
+                                                <td><?php echo $row['hari']; ?></td>
+                                                <td><?php echo $row['tanggal']; ?></td>
+                                                <td><?php echo $row['waktu']; ?></td>  
 
                                                 </td>
                                                 <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>

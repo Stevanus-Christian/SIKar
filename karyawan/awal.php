@@ -10,6 +10,7 @@ error_reporting(0);
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="300" />
 
     <!-- Title Page-->
     <title>Beranda Karyawan</title>
@@ -67,7 +68,9 @@ error_reporting(0);
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                            
                         </li>
-                                              
+                        <li>
+                            <a href="logout.php">Logout</a>
+                        </li>                    
                     </ul>
                 </div>
             </nav>
@@ -89,7 +92,9 @@ error_reporting(0);
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                           
                         </li>
-                        
+                        <li>
+                            <a href="logout.php">Logout</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

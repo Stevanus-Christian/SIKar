@@ -67,7 +67,9 @@ error_reporting(0);
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                            
                         </li>
-                        
+                        <li>
+                            <a href="logout.php">Logout</a>
+                        </li>
                         
                     </ul>
                 </div>
@@ -90,11 +92,9 @@ error_reporting(0);
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                          
                         </li>
-                       
-
-                      
-                            
-                            
+                        <li>
+                            <a href="logout.php">Logout</a>
+                        </li>  
                         </li>
                     </ul>
                 </nav>
