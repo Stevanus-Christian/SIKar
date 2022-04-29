@@ -12,6 +12,7 @@ include ("koneksi.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Aplikasi Absensi Karyawan - Home</title>
+  <link rel="icon" href="img/employee.png" type="image/png">
 
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -164,8 +165,7 @@ include ("koneksi.php");
 				</div>
 			</div>
 			<div class="footer-bottom row align-items-center text-center text-lg-left">
-				<p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian | All rights reserved 
+          <p class="footer-text m-0 col-lg-8 col-md-12">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian | All rights reserved</p>
 				<div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
 					<a href="https://www.facebook.com/thomas.iflekzz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
 					<a href="https://github.com/Stevanus-Christian" target="_blank"><i class="fab fa-github"></i></a>

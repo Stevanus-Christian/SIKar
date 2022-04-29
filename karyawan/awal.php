@@ -11,13 +11,11 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="refresh" content="300" />
+    <link rel="icon" href="../img/employee.png" type="image/png">
 
     <!-- Title Page-->
     <title>Beranda Karyawan</title>
-
-       
-  
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -185,7 +183,12 @@ error_reporting(0);
                             <form action="dt_absen_sv.php" method="post">
                                 <div class="form-group">
                                 <table class="table table-borderless table-striped table-earning" >
-                                        
+                                    <?php
+                                    $ip_address = $_SERVER['REMOTE_ADDR'];
+                                    $location = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip_address));
+                                    $latitude = $location->geoplugin_latitude;
+                                    $longitude = $location->geoplugin_longitude;
+                                    ?>
                                         <tbody>
                                             <tr>
                                                 <td>NIP</td>
@@ -217,9 +220,15 @@ error_reporting(0);
                                                 <td><input type="text" class="form-control" value="<?php echo date('h:i:s A' ); ?>" name="waktu" readonly="" ></td>
                                             </tr>
 
-                                           <tr>
-                                              
-                                           </tr>
+                                            <tr>
+                                                <td>Latitude</td>
+                                                <td><input type="text" class="form-control" value="<?php echo $latitude; ?>" name="latitude" readonly="" ></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Longitude</td>
+                                                <td><input type="text" class="form-control" value="<?php echo $longitude; ?>" name="longitude" readonly="" ></td>
+                                            </tr>
 
                                             <tr>
                                                 <td><button type="submit" name="simpan" class="btn btn-primary">Absen</button></td>
@@ -245,6 +254,7 @@ error_reporting(0);
                                                 <td>
                                                 
                                                <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika anda Tidak Hadir / Absen</button></a>
+                                               
                                             </td>
                                             </tr>
                                            
@@ -263,7 +273,7 @@ error_reporting(0);
                         <div class="header-desktop">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian All rights reserved | Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian | All rights reserved</p>
                                 </div>
                             </div>
                         </div>

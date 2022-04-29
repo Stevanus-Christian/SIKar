@@ -2,8 +2,14 @@
 session_start();
 include ("koneksi.php");
 header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls; location: data_absen.php");
+header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls");
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Export Database MySQL ke Excel Menggunakan PHP</title>
+</head>
+<body>
 <table border="1">
                                             <tr>
                                                 <th>No</th>
@@ -17,9 +23,10 @@ header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls; locati
                                             include 'koneksi.php';
                                             $sql = "SELECT * FROM tb_absen";
                                             $query = mysqli_query($koneksi, $sql);
+                                            if(mysqli_num_rows($query)>0){
 
-                                            $no = 1;
-                                            while ($row = mysqli_fetch_array($query)) {                                         
+                                                $no = 1;
+                                                while ($row = mysqli_fetch_array($query)) {                                         
 ?>
                                         <tbody>
                                             <tr>
@@ -32,6 +39,16 @@ header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls; locati
                                             </tr>
 <?php 
                                            $no++;
-                                       }                                
+                                        }
+                                        //header("location: data_absen.php");
+                                        echo "<script>window.location.href='data_absen.php'</script>";
+                                        }
+                                        else{
+                                            die("Belum ada data");
+                                            //header("location: data_absen.php");
+                                            echo "<script>window.location.href='data_absen.php'</script>";
+                                        }                            
 ?>
 </table>
+</body>
+</html>

@@ -11,6 +11,6 @@ $koneksi = mysqli_connect($server, $username, $password, $database);
 
 // Mengecek koneksi
 if (mysqli_connect_errno()) {
-	echo "Koneksi gagal " . mysql_connect_error();
+	echo "Koneksi Ke Database Gagal!" . mysql_connect_error();
 }
 ?>

@@ -6,9 +6,7 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
+    <link rel="icon" href="img/employee.png" type="image/png">
 
     <!-- Title Page-->
     <title>Beranda</title>
@@ -177,7 +175,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>&copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian | All rights reserved
+                                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian | All rights reserved</p>
                                 </div>
                             </div>
                         </div>

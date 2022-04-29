@@ -10,13 +10,10 @@ error_reporting(0);
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/employee.png" type="image/png">
 
     <!-- Title Page-->
     <title>Dashboard</title>
-
-       
-  
-
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -250,8 +247,7 @@ error_reporting(0);
                                            </tr>
 
                                             <tr>
-                                                <td><a href="?m=karyawan&s=edit&id_karyawan=<?php echo $id;?>">EDIT</a></td>
-                                               
+                                                <td><a href="?m=karyawan&s=edit&id_karyawan=<?php //echo $id;?>">EDIT</a></td>
                                             </tr>
                                             
                                       </tbody>
@@ -268,7 +264,7 @@ error_reporting(0);
                         <div class="header-desktop">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Stevanus Christian | All rights reserved</p>
                                 </div>
                             </div>
                         </div>
