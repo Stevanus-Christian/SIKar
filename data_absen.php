@@ -191,6 +191,8 @@ error_reporting(0);
                                                 <th>Hari</th>
                                                 <th>Tanggal</th>
                                                 <th>Waktu</th>
+                                                <th>Latitude</th>
+                                                <th>Longitude</th>
                                                 <th>Aksi</th>
                                                 
                                             </tr>
@@ -213,6 +215,8 @@ error_reporting(0);
                                                 <td><?php echo $row['hari']; ?></td>
                                                 <td><?php echo $row['tanggal']; ?></td>
                                                 <td><?php echo $row['waktu']; ?></td>  
+                                                <td><?php echo $row['latitude']; ?></td>  
+                                                <td><?php echo $row['longitude']; ?></td>  
 
                                                 </td>
                                                 <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>

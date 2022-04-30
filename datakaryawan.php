@@ -196,7 +196,7 @@ session_start();
                                                 <td>NIP</td>
                                                 <td>
                                                 
-                                                <input type="text" class="form-control" maxlength="9" required="" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px">    
+                                                <input type="text" class="form-control" maxlength="50" required="" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px">    
                                                 
                                             </td>
                                             </tr>

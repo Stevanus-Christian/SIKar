@@ -218,7 +218,7 @@ error_reporting(0);
 
                                              <tr>
                                                 <td>Waktu</td>
-                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('l, d-m-Y h:i:s a' ); ?>" name="waktu"></td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('l, d-m-Y h:i:s A' ); ?>" name="waktu"></td>
                                             </tr>
 
                                            <tr>
@@ -243,7 +243,7 @@ error_reporting(0);
                                                
                                                 <td>
                                                 
-                                                <a href="index.php"><button class="btn btn-primary">Batal</button>
+                                                <a href="index.php"><button class="btn btn-primary">Kembali</button>
                                             </td>
                                             </tr>
                                            

@@ -17,7 +17,9 @@ header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls");
                                                 <th>Nama</th>
                                                 <th>Hari</th>
                                                 <th>Tanggal</th>
-                                                <th>Waktu</th>    
+                                                <th>Waktu</th>   
+                                                <th>Latitude</th>
+                                                <th>Longitude</th> 
                                             </tr>
 <?php 
                                             include 'koneksi.php';
@@ -35,7 +37,9 @@ header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls");
                                                 <td><?php echo $row ['nama']; ?></td>
                                                 <td><?php echo $row['hari']; ?></td>
                                                 <td><?php echo $row['tanggal']; ?></td>
-                                                <td><?php echo $row['waktu']; ?></td>     
+                                                <td><?php echo $row['waktu']; ?></td>  
+                                                <td><?php echo $row['latitude']; ?></td>  
+                                                <td><?php echo $row['longitude']; ?></td>    
                                             </tr>
 <?php 
                                            $no++;

@@ -1,7 +1,6 @@
 <?php 
 error_reporting(0);
-
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,7 @@ error_reporting(0);
 
 </head>
 <?php date_default_timezone_set('Asia/Jakarta'); ?>
-<body class="animsition" >
+<body class="animsition" onload="getLocation();">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -175,20 +174,38 @@ error_reporting(0);
                                 </div>
                             </div>
                         </div>
+                                <script type="text/javascript">
+		                            function getLocation() {
+                                        if (navigator.geolocation) {
+                                            navigator.geolocation.getCurrentPosition(showPosition, showError);
+                                        } else { 
+                                            alert("Geolocation tidak didukung oleh browser ini!");
+                                        }
+                                    }
 
+                                    function showPosition(position) {
+                                        console.log(position);
+                                        document.querySelector('.Form input[name = "latitude"]').value = position.coords.latitude;
+                                        document.querySelector('.Form input[name = "longitude"]').value = position.coords.longitude;
+                                    }
+
+                                    function showError(error){
+                                        switch(error.code){
+                                            case error.PERMISSION_DENIED:
+                                                alert("Izinkan akses Geolokasi pada perangkat Anda!");
+                                                location.reload();
+                                                break;
+                                        }
+                                    }
+                                </script>
 
                         <!-- FORM -->
                         <div class="row">
                            <div class="table-responsive table--no-card m-b-30">
-                            <form action="dt_absen_sv.php" method="post">
+                            <form class="Form" action="dt_absen_sv.php" method="post" autocomplete="off">
                                 <div class="form-group">
                                 <table class="table table-borderless table-striped table-earning" >
-                                    <?php
-                                    $ip_address = $_SERVER['REMOTE_ADDR'];
-                                    $location = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip_address));
-                                    $latitude = $location->geoplugin_latitude;
-                                    $longitude = $location->geoplugin_longitude;
-                                    ?>
+                                
                                         <tbody>
                                             <tr>
                                                 <td>NIP</td>
@@ -222,12 +239,12 @@ error_reporting(0);
 
                                             <tr>
                                                 <td>Latitude</td>
-                                                <td><input type="text" class="form-control" value="<?php echo $latitude; ?>" name="latitude" readonly="" ></td>
+                                                <td><input type="text" class="form-control" value="" name="latitude" readonly=""></td>
                                             </tr>
 
                                             <tr>
                                                 <td>Longitude</td>
-                                                <td><input type="text" class="form-control" value="<?php echo $longitude; ?>" name="longitude" readonly="" ></td>
+                                                <td><input type="text" class="form-control" value="" name="longitude" readonly="" ></td>
                                             </tr>
 
                                             <tr>
@@ -239,7 +256,6 @@ error_reporting(0);
                                     </table>
                                         </div>
                             </form>
-                                    
                                 </div>    
                         </div>
                      <div class="row">
@@ -253,7 +269,7 @@ error_reporting(0);
                                                
                                                 <td>
                                                 
-                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika anda Tidak Hadir / Absen</button></a>
+                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika Anda Tidak Hadir / Absen</button></a>
                                                
                                             </td>
                                             </tr>

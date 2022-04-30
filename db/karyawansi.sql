@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 21, 2020 at 07:38 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Host: 127.0.0.1
+-- Generation Time: Apr 30, 2022 at 08:32 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,17 +31,20 @@ CREATE TABLE `tb_absen` (
   `id` int(11) NOT NULL,
   `id_karyawan` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `waktu` varchar(255) NOT NULL
+  `hari` varchar(250) NOT NULL,
+  `tanggal` varchar(250) NOT NULL,
+  `waktu` varchar(255) NOT NULL,
+  `latitude` varchar(250) NOT NULL,
+  `longitude` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_absen`
 --
 
-INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `waktu`) VALUES
-(16, '1920392912', 'Budi Sanjaya', 'Thursday, 10-09-2020 07:52:25 am'),
-(17, '192', 'Sarah Mutia', 'Thursday, 10-09-2020 07:54:45 am'),
-(18, '9', 'Abdul Muhlisin Sudirman', 'Sunday, 20-09-2020 01:31:05 pm');
+INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`, `latitude`, `longitude`) VALUES
+(60, '1923240059', 'Stevanus Christian', 'Saturday', '30-04-2022', '12:39:43 PM', '-2.9278101', '104.7637733'),
+(61, '1923240085', 'Tasya Angelya', 'Saturday', '30-04-2022', '01:28:35 PM', '-2.9278101', '104.7637733');
 
 -- --------------------------------------------------------
 
@@ -61,7 +64,8 @@ CREATE TABLE `tb_daftar` (
 
 INSERT INTO `tb_daftar` (`id`, `username`, `password`) VALUES
 (2, 'admin', 'admin'),
-(5, 'admin2', 'admin2');
+(12, 'steven', 'steven'),
+(13, 'tasya', 'tasya');
 
 -- --------------------------------------------------------
 
@@ -112,10 +116,8 @@ CREATE TABLE `tb_karyawan` (
 --
 
 INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
-(9, 'Abdul', 'd41d8cd98f00b204e9800998ecf8427e', 'Abdul Muhlisin Sudirman', 'Klaten / 19-09-1994', 'Laki-laki', 'Islam', 'China', '0895635721923', 'CEO', '21092020072509employee1.png'),
-(192, 'sarah', '9e9d7a08e048e9d604b79460b54969c3', 'Sarah Mutia', 'Cianjur / 10-12-1992', 'Perempuan', 'Islam', '', '08128384848', 'CEO', '10092020025112employee3.png'),
-(999999999, 'bagas', 'ee776a18253721efe8a62e4abd29dc47', 'bagas a', 'Jakarta / 10-01-1990', 'Laki-laki', 'Islam', 'Jakarta', '0895628383333', 'Office Boy', '10092020024120employee3.png'),
-(1920392912, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'Budi Sanjaya', 'Bekasi / 10-12-1980', 'Laki-laki', 'Kristen', '', '0895254859994', 'CEO', '10092020023942employee1.png');
+(1923240059, 'steven', '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Perumahan Bumi Sako Damai', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
+(1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg');
 
 -- --------------------------------------------------------
 
@@ -138,8 +140,8 @@ CREATE TABLE `tb_keterangan` (
 --
 
 INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `waktu`, `bukti`) VALUES
-(51, '9', 'Abdul Muhlisin', 'Sakit', 'Saya Sakit Pak', 'Thursday, 10-09-2020 07:53:23 am', '10092020025339suratket1.png'),
-(52, '999999999', 'bagas a', 'Izin', 'Mohon maaf bapak / ibu, untuk hari ini saya tidak bisa hadir, dikarenakan saya izin.', 'Thursday, 10-09-2020 07:55:20 am', '10092020025619suratket2.jpg');
+(68, '1923240059', 'Stevanus Christian', 'Sakit', 'Selamat pagi, saya izin tidak masuk kerja dikarenakan saya sedang sakit. Untuk surat keterangan sakitnya terlampir. Terima kasih', 'Saturday, 30-04-2022 01:23:19 PM', '30042022082422Danshi no Blog.jpg'),
+(70, '1923240085', 'Tasya Angelya', 'Izin', 'Pagi pak saya izin tidak masuk kerja hari ini dikarenakan ada urusan keluarga. Terimakasih atas pengertiannya.', 'Saturday, 30-04-2022 01:27:09 PM', '30042022082743izin.jpg');
 
 --
 -- Indexes for dumped tables
@@ -183,13 +185,13 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`
 --
 ALTER TABLE `tb_daftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
@@ -201,7 +203,7 @@ ALTER TABLE `tb_jabatan`
 -- AUTO_INCREMENT for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

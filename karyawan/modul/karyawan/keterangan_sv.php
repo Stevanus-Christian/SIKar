@@ -16,7 +16,6 @@ if (isset($_POST['simpan'])) {
 	$buktibaru = date('dmYHis').$bukti;
 	$path = "images/".$buktibaru;
 
-
 }
 
 if (move_uploaded_file($tmp, $path)) {
@@ -26,16 +25,15 @@ if (move_uploaded_file($tmp, $path)) {
 }
 
 
-
-
 $query = "INSERT INTO tb_keterangan SET id_karyawan = '$id_karyawan', nama='$nama', keterangan='$keterangan', alasan='$alasan', waktu='$waktu', bukti='$buktibaru'";
 mysqli_query($koneksi, $query);
 
 if ($query) {
-	echo "<script>alert('Anda sudah memberi keterangan') </script>";
+	echo "<script>alert('Keterangan Anda berhasil disimpan!') </script>";
 	echo '<script>window.history.back()</script>';
 }else{
-	echo "Gagal memberi keterangan";
+	echo "<script>alert('Keterangan anda gagal disimpan!') </script>";
+	echo '<script>window.history.back()</script>';
 }
 
  ?>
