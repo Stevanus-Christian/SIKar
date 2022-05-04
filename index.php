@@ -12,7 +12,7 @@ include ("koneksi.php");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Aplikasi Absensi Karyawan - Home</title>
-  <link rel="icon" href="img/employee.png" type="image/png">
+  <link rel="icon" href="assets/employee.png" type="image/png">
 
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -30,7 +30,7 @@ include ("koneksi.php");
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/is.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="index.html"><img src="assets/is.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -58,7 +58,7 @@ include ("koneksi.php");
         <div class="row">
           <div class="col-lg-7">
             <div class="hero-banner__img">
-              <img class="img-fluid" src="img/logokaryawan.png" alt="">
+              <img class="img-fluid" src="assets/logokaryawan.png" alt="">
             </div>
           </div>
           <div class="col-lg-5 pt-5">

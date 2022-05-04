@@ -10,7 +10,7 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="refresh" content="300" />
-    <link rel="icon" href="../img/employee.png" type="image/png">
+    <link rel="icon" href="../assets/employee.png" type="image/png">
 
     <!-- Title Page-->
     <title>Beranda Karyawan</title>
@@ -248,8 +248,8 @@ error_reporting(0);
                                             </tr>
 
                                             <tr>
-                                                <td><button type="submit" name="simpan" class="btn btn-primary">Absen</button></td>
-                                                
+                                                <td></td>
+                                                <td><button type="submit" name="simpan" class="btn btn-primary center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 150px;">Absen</button></td>
                                             </tr>
                                             
                                       </tbody>
@@ -269,7 +269,7 @@ error_reporting(0);
                                                
                                                 <td>
                                                 
-                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika Anda Tidak Hadir / Absen</button></a>
+                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning center-block">Klik Tombol ini jika Anda Tidak Hadir</button></a>
                                                
                                             </td>
                                             </tr>

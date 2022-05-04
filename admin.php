@@ -6,7 +6,7 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/employee.png" type="image/png">
+    <link rel="icon" href="assets/employee.png" type="image/png">
 
     <!-- Title Page-->
     <title>Beranda</title>
@@ -165,7 +165,7 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <center><img src="img/logokaryawan.png" width="500" class="img img-responsive" height="500"></center><br>
+                            <center><img src="assets/logokaryawan.png" width="500" class="img img-responsive" height="500"></center><br>
                             <strong class="col-md-12" style="margin-top: 5rem;">Selamat datang Admin Absensi Karyawan</strong>
 
                                     </div>
