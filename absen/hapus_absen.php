@@ -10,6 +10,7 @@ $hapus = mysqli_query($koneksi, $sql);
 if ($hapus) {
 	header("location: ../data_absen.php");
 }else{
-echo "gagal dihapus";
+echo "Gagal menghapus absen!";
+header("location: ../data_absen.php");
 } 
  ?>

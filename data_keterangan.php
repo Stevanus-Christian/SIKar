@@ -185,8 +185,8 @@ session_start();
                                  <th>ID Karyawan</th>
                                  <th>Nama</th>
                                  <th>Keterangan</th>
-                                 <th class="text-right">Alasan</th>
-                                 <th class="text-right">Waktu</th>
+                                 <th>Alasan</th>
+                                 <th>Waktu</th>
                                  <th>Bukti</th>
                                
                                 <th>Aksi</th>

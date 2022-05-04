@@ -134,7 +134,7 @@
                         </li>
                         <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-map-marker-alt"></i>Data Keterangan</a>
+                                <i class="fas fa-table"></i>Data Keterangan</a>
                         </li>
                         <li>
                             <a href="logout.php">Logout</a>

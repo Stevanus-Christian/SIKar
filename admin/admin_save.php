@@ -15,6 +15,7 @@ if ($save) {
 	header("location: ../datauser.php");
 }else{
 	echo "Gagal Menyimpan Data";
+	header("location: ../datauser.php");
 }
 
  ?>

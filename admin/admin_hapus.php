@@ -9,7 +9,8 @@ $query = mysqli_query($koneksi, $sql_h);
 if ($query) {
 	header("location: ../datauser.php");
 }else{
-	echo "Gagal Menghapus Data";
+	echo "Gagal Menghapus Data!";
+	header("location: ../datauser.php");
 }
  ?>
 

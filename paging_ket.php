@@ -18,7 +18,6 @@ $total_halaman = ceil($jumlah_data / $batas);
 $data_karyawan = mysqli_query($koneksi, "SELECT * FROM tb_keterangan LIMIT $halaman_awal, $batas");
 $nomor = $halaman_awal+1;
 
-
 while ($row=mysqli_fetch_array($data_karyawan)) {
 	
 

@@ -16,7 +16,8 @@ $hapus = mysqli_query($koneksi, $sql_h);
 if ($hapus) {
 	header("location: ../data_keterangan.php");
 }else{
-	echo "gagal dihapus";
+	echo "Gagal menghapus keterangan!";
+	header("location: ../data_keterangan.php");
 }
 
 
