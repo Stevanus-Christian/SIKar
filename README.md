@@ -22,7 +22,7 @@ Absen Karyawan - Sistem informasi karyawan merupakan aplikasi absensi berbasis w
   1. username = steven
   2. password = steven
   
-##License
+## License
 Stevanus-Christian/SIKar is licensed under the
 <br>
 <b>Creative Commons Zero v1.0 Universal</b>
