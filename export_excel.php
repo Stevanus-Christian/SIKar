@@ -1,8 +1,13 @@
 <?php
 session_start();
 include ("koneksi.php");
-header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Data Absen Pegawai.xls");
+
+// nama file
+$filename="DataAbsenPegawai ".date('dmY').".xls";
+
+//header info for browser
+header("Content-Type: application/vnd-ms-excel"); 
+header('Content-Disposition: attachment; filename="' . $filename . '";');
 ?>
 <!DOCTYPE html>
 <html>
