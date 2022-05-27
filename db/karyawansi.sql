@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2022 at 08:32 AM
+-- Generation Time: May 27, 2022 at 03:24 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_absen` (
   `id` int(11) NOT NULL,
-  `id_karyawan` varchar(255) NOT NULL,
+  `id_karyawan` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `hari` varchar(250) NOT NULL,
   `tanggal` varchar(250) NOT NULL,
@@ -43,8 +43,10 @@ CREATE TABLE `tb_absen` (
 --
 
 INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`, `latitude`, `longitude`) VALUES
-(60, '1923240059', 'Stevanus Christian', 'Saturday', '30-04-2022', '12:39:43 PM', '-2.9278101', '104.7637733'),
-(61, '1923240085', 'Tasya Angelya', 'Saturday', '30-04-2022', '01:28:35 PM', '-2.9278101', '104.7637733');
+(60, 1923240059, 'Stevanus Christian', 'Saturday', '30-04-2022', '12:39:43 PM', '-2.9278101', '104.7637733'),
+(61, 1923240085, 'Tasya Angelya', 'Saturday', '30-04-2022', '01:28:35 PM', '-2.9278101', '104.7637733'),
+(62, 1923240085, 'Tasya Angelya', 'Saturday', '07-05-2022', '07:16:41 PM', '-2.9753344', '104.759296'),
+(63, 1923240059, 'Stevanus Christian', 'Saturday', '07-05-2022', '07:26:33 PM', '-2.9753344', '104.759296');
 
 -- --------------------------------------------------------
 
@@ -117,7 +119,8 @@ CREATE TABLE `tb_karyawan` (
 
 INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
 (1923240059, 'steven', '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Perumahan Bumi Sako Damai', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
-(1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg');
+(1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg'),
+(2147483647, 'given', 'b9f4c1cc743af7b09673ba380390d2f1', 'given', 'given', 'Perempuan', 'Islam', 'given', '08989898989', 'CEO', '27052022145705Screenshot 2022-04-17 160056.png');
 
 -- --------------------------------------------------------
 
@@ -127,7 +130,7 @@ INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_t
 
 CREATE TABLE `tb_keterangan` (
   `id` int(11) NOT NULL,
-  `id_karyawan` varchar(11) NOT NULL,
+  `id_karyawan` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL,
   `alasan` text NOT NULL,
@@ -140,8 +143,8 @@ CREATE TABLE `tb_keterangan` (
 --
 
 INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `waktu`, `bukti`) VALUES
-(68, '1923240059', 'Stevanus Christian', 'Sakit', 'Selamat pagi, saya izin tidak masuk kerja dikarenakan saya sedang sakit. Untuk surat keterangan sakitnya terlampir. Terima kasih', 'Saturday, 30-04-2022 01:23:19 PM', '30042022082422Danshi no Blog.jpg'),
-(70, '1923240085', 'Tasya Angelya', 'Izin', 'Pagi pak saya izin tidak masuk kerja hari ini dikarenakan ada urusan keluarga. Terimakasih atas pengertiannya.', 'Saturday, 30-04-2022 01:27:09 PM', '30042022082743izin.jpg');
+(68, 1923240059, 'Stevanus Christian', 'Sakit', 'Selamat pagi, saya izin tidak masuk kerja dikarenakan saya sedang sakit. Untuk surat keterangan sakitnya terlampir. Terima kasih', 'Saturday, 30-04-2022 01:23:19 PM', '30042022082422Danshi no Blog.jpg'),
+(70, 1923240085, 'Tasya Angelya', 'Izin', 'Pagi pak saya izin tidak masuk kerja hari ini dikarenakan ada urusan keluarga. Terimakasih atas pengertiannya.', 'Saturday, 30-04-2022 01:27:09 PM', '30042022082743izin.jpg');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +154,8 @@ INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`
 -- Indexes for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_karyawan` (`id_karyawan`);
 
 --
 -- Indexes for table `tb_daftar`
@@ -175,7 +179,8 @@ ALTER TABLE `tb_karyawan`
 -- Indexes for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_karyawan` (`id_karyawan`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -185,7 +190,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`
@@ -203,7 +208,23 @@ ALTER TABLE `tb_jabatan`
 -- AUTO_INCREMENT for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tb_absen`
+--
+ALTER TABLE `tb_absen`
+  ADD CONSTRAINT `tb_absen_ibfk_1` FOREIGN KEY (`id_karyawan`) REFERENCES `tb_karyawan` (`id_karyawan`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tb_keterangan`
+--
+ALTER TABLE `tb_keterangan`
+  ADD CONSTRAINT `tb_keterangan_ibfk_1` FOREIGN KEY (`id_karyawan`) REFERENCES `tb_karyawan` (`id_karyawan`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

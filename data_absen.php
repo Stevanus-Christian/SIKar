@@ -131,14 +131,14 @@ error_reporting(0);
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data User</a>
                         </li>
                         <li>
                             <a href="datajabatan.php">
                                 <i class="far fa-check-square"></i>Data Jabatan</a>
                         </li>
-                        <li class="active has-sub">
+                        <li class="data_absen.php">
                             <a href="data_absen.php">
                                 <i class="fas fa-calendar-alt"></i>Data Absen</a>
                         </li>

@@ -204,7 +204,7 @@ error_reporting(0);
 
                                             <tr>
                                             	<td>Keterangan</td>
-                                            	<td><select name="keterangan" required="">
+                                            	<td><select name="keterangan" required="" class="form-control">
                                             		<option></option>
                                             		<option>Sakit</option>
                                             		<option>Izin</option>

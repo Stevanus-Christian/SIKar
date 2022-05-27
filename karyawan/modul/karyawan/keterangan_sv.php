@@ -1,5 +1,5 @@
 <?php 
-
+error_reporting(0);
 include 'koneksi.php';
 if (isset($_POST['simpan'])) {
 	
