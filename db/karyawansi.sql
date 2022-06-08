@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 03:24 PM
+-- Generation Time: Jun 08, 2022 at 01:50 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -34,6 +34,7 @@ CREATE TABLE `tb_absen` (
   `hari` varchar(250) NOT NULL,
   `tanggal` varchar(250) NOT NULL,
   `waktu` varchar(255) NOT NULL,
+  `status_absen` varchar(100) NOT NULL,
   `latitude` varchar(250) NOT NULL,
   `longitude` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,11 +43,8 @@ CREATE TABLE `tb_absen` (
 -- Dumping data for table `tb_absen`
 --
 
-INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`, `latitude`, `longitude`) VALUES
-(60, 1923240059, 'Stevanus Christian', 'Saturday', '30-04-2022', '12:39:43 PM', '-2.9278101', '104.7637733'),
-(61, 1923240085, 'Tasya Angelya', 'Saturday', '30-04-2022', '01:28:35 PM', '-2.9278101', '104.7637733'),
-(62, 1923240085, 'Tasya Angelya', 'Saturday', '07-05-2022', '07:16:41 PM', '-2.9753344', '104.759296'),
-(63, 1923240059, 'Stevanus Christian', 'Saturday', '07-05-2022', '07:26:33 PM', '-2.9753344', '104.759296');
+INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`, `status_absen`, `latitude`, `longitude`) VALUES
+(75, 1923240059, 'Stevanus Christian', 'Wednesday', '08-06-2022', '18:45:14', 'Pulang', '-2.9668694', '104.7404383');
 
 -- --------------------------------------------------------
 
@@ -118,9 +116,8 @@ CREATE TABLE `tb_karyawan` (
 --
 
 INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
-(1923240059, 'steven', '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Perumahan Bumi Sako Damai', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
-(1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg'),
-(2147483647, 'given', 'b9f4c1cc743af7b09673ba380390d2f1', 'given', 'given', 'Perempuan', 'Islam', 'given', '08989898989', 'CEO', '27052022145705Screenshot 2022-04-17 160056.png');
+(1923240059, 'steven', '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Sako', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
+(1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg');
 
 -- --------------------------------------------------------
 
@@ -190,7 +187,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`
@@ -208,7 +205,7 @@ ALTER TABLE `tb_jabatan`
 -- AUTO_INCREMENT for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- Constraints for dumped tables

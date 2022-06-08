@@ -23,8 +23,7 @@ header('Content-Disposition: attachment; filename="' . $filename . '";');
                                                 <th>Hari</th>
                                                 <th>Tanggal</th>
                                                 <th>Waktu</th>   
-                                                <th>Latitude</th>
-                                                <th>Longitude</th> 
+                                                <th>Status Absen</th>
                                             </tr>
 <?php 
                                             include 'koneksi.php';
@@ -43,8 +42,7 @@ header('Content-Disposition: attachment; filename="' . $filename . '";');
                                                 <td><?php echo $row['hari']; ?></td>
                                                 <td><?php echo $row['tanggal']; ?></td>
                                                 <td><?php echo $row['waktu']; ?></td>  
-                                                <td><?php echo $row['latitude']; ?></td>  
-                                                <td><?php echo $row['longitude']; ?></td>    
+                                                <td><?php echo $row['status_absen']; ?></td>      
                                             </tr>
 <?php 
                                            $no++;

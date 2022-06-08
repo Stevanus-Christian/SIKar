@@ -130,7 +130,7 @@ session_start();
 
                                            <tr>
                                               <td>Alamat</td>
-                                              <textarea autocomplete="off" class="form-control" name="alamat" value="<?php echo $d['alamat'];?>"></textarea>
+                                              <td><textarea autocomplete="off" class="form-control" name="alamat" value="<?php echo $d['alamat'];?>"></textarea><td>
                                            </tr>
 
                                            <tr>

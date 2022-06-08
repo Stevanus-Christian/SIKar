@@ -168,12 +168,14 @@ error_reporting(0);
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1" style="text-align: center;">Selamat Datang <?php echo $_SESSION['namasi']; ?>, Silahkan Absen</h2>
-                                    <button class="au-btn au-btn-icon au-btn--blue">
-                                        
+                                    <h2 class="title-1" style="text-align: center;">Selamat Datang <?php echo $_SESSION['namasi']; ?>, Silahkan Absen</h2>        
+                                </div>
+                                <div class="overview-wrap">
+                                    <h1 class="title-1" id="jam" style="text-align: center;"></h1>
                                 </div>
                             </div>
                         </div>
+                        <br>
                                 <script type="text/javascript">
 		                            function getLocation() {
                                         if (navigator.geolocation) {
@@ -197,6 +199,18 @@ error_reporting(0);
                                                 break;
                                         }
                                     }
+
+                                    setInterval(customClock, 500);
+
+                                    function customClock() {
+                                        var time = new Date();
+                                        var hrs = time.getHours();
+                                        var min = time.getMinutes();
+                                        var sec = time.getSeconds();
+
+                                        document.getElementById("jam").innerHTML = "Waktu Sekarang : "+ hrs + ":" + min + ":" + sec;
+                                    }
+
                                 </script>
 
                         <!-- FORM -->
@@ -233,11 +247,6 @@ error_reporting(0);
                                             </tr>
 
                                             <tr>
-                                                <td>Waktu</td>
-                                                <td><input type="text" class="form-control" value="<?php echo date('h:i:s A' ); ?>" name="waktu" readonly="" ></td>
-                                            </tr>
-
-                                            <tr>
                                                 <td>Latitude</td>
                                                 <td><input type="text" class="form-control" value="" name="latitude" readonly=""></td>
                                             </tr>
@@ -248,10 +257,15 @@ error_reporting(0);
                                             </tr>
 
                                             <tr>
+                                                <input type="hidden" class="form-control" value="<?php echo date('H:i:s' ); ?>" name="waktu" readonly="" >
                                                 <td></td>
-                                                <td><button type="submit" name="simpan" class="btn btn-primary center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 150px;">Absen</button></td>
+                                                <td><button type="submit" value="Masuk" name="simpan" class="btn btn-success center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 200px;">Absen Masuk</button></td>
                                             </tr>
                                             
+                                            <tr>
+                                                <td></td>
+                                                <td><button type="submit" value="Pulang" name="simpan" class="btn btn-success center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 200px;">Absen Pulang</button></td>
+                                            </tr>
                                       </tbody>
                                     </table>
                                         </div>

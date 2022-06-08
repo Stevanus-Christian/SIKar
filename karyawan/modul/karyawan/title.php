@@ -218,7 +218,7 @@ error_reporting(0);
 
                                              <tr>
                                                 <td>Waktu</td>
-                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('l, d-m-Y h:i:s A' ); ?>" name="waktu"></td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('l, d-m-Y H:i:s' ); ?>" name="waktu"></td>
                                             </tr>
 
                                            <tr>
