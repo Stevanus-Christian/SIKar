@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 01:50 PM
+-- Generation Time: Jun 16, 2022 at 09:21 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -44,7 +44,11 @@ CREATE TABLE `tb_absen` (
 --
 
 INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`, `status_absen`, `latitude`, `longitude`) VALUES
-(75, 1923240059, 'Stevanus Christian', 'Wednesday', '08-06-2022', '18:45:14', 'Pulang', '-2.9668694', '104.7404383');
+(75, 1923240059, 'Stevanus Christian', 'Wednesday', '08-06-2022', '18:45:14', 'Pulang', '-2.9668694', '104.7404383'),
+(76, 1923240059, 'Stevanus Christian', 'Saturday', '11-06-2022', '10:36:31', 'Masuk', '-2.9738416', '104.7640647'),
+(80, 1923240059, 'Stevanus Christian', 'Monday', '13-06-2022', '19:41:52', 'Pulang', '-2.9627668', '104.7400274'),
+(81, 1923240059, 'Stevanus Christian', 'Wednesday', '15-06-2022', '17:27:04', 'Pulang', '-2.9627635', '104.7399998'),
+(83, 1923240059, 'Stevanus Christian', 'Thursday', '16-06-2022', '14:18:06', 'Masuk', '-2.9687808', '104.7658496');
 
 -- --------------------------------------------------------
 
@@ -86,10 +90,12 @@ INSERT INTO `tb_jabatan` (`id`, `jabatan`) VALUES
 (3, 'CEO'),
 (4, 'CTO'),
 (5, 'CFO'),
-(6, 'WP Pemasaran'),
 (7, 'CMO'),
 (8, 'COO'),
-(9, 'Office Boy');
+(10, 'Operator'),
+(11, 'Admin Lokasi'),
+(12, 'Finance Officer'),
+(13, 'Helper');
 
 -- --------------------------------------------------------
 
@@ -141,7 +147,8 @@ CREATE TABLE `tb_keterangan` (
 
 INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `waktu`, `bukti`) VALUES
 (68, 1923240059, 'Stevanus Christian', 'Sakit', 'Selamat pagi, saya izin tidak masuk kerja dikarenakan saya sedang sakit. Untuk surat keterangan sakitnya terlampir. Terima kasih', 'Saturday, 30-04-2022 01:23:19 PM', '30042022082422Danshi no Blog.jpg'),
-(70, 1923240085, 'Tasya Angelya', 'Izin', 'Pagi pak saya izin tidak masuk kerja hari ini dikarenakan ada urusan keluarga. Terimakasih atas pengertiannya.', 'Saturday, 30-04-2022 01:27:09 PM', '30042022082743izin.jpg');
+(70, 1923240085, 'Tasya Angelya', 'Izin', 'Pagi pak saya izin tidak masuk kerja hari ini dikarenakan ada urusan keluarga. Terimakasih atas pengertiannya.', 'Saturday, 30-04-2022 01:27:09 PM', '30042022082743izin.jpg'),
+(78, 1923240059, 'Stevanus Christian', 'Izin', 'Saya izin karena ada urusan keluarga. Terimakasih', 'Thursday, 16-06-2022 14:19:05', '16062022092006surat-izin-kerja-menikah.jpg');
 
 --
 -- Indexes for dumped tables
@@ -187,7 +194,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`
@@ -199,13 +206,13 @@ ALTER TABLE `tb_daftar`
 -- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- Constraints for dumped tables

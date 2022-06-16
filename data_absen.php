@@ -156,6 +156,20 @@ error_reporting(0);
         </aside>
         <!-- END MENU SIDEBAR-->
 
+        <?php
+        $tglAwal = "";
+        $tglAkhir = "";
+
+        if($_POST['txtTglAwal']!='' && $_POST['txtTglAkhir']!='') {
+            $tglAwal = $_POST['txtTglAwal'];
+            $tglAkhir = $_POST['txtTglAkhir'];
+            $sql = "SELECT * FROM tb_absen WHERE date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+        }
+        else{
+            $sql = "SELECT * FROM tb_absen";
+        }
+        ?>
+
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
@@ -181,6 +195,33 @@ error_reporting(0);
             <div class="main-content"> 
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                    <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                <h2 class="title-1" style="text-align: center;">Data Absen Periode Tanggal <b><?php echo ($tglAwal);?></b> s/d <b><?php echo ($tglAkhir);?></b></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                           <div class="table-responsive table--no-card m-b-30">
+                            <form action="data_absen.php" method="post">
+                                <div class="form-group">
+                                <table class="table table-borderless table-striped table-earning" >
+                                
+                                        <tbody>
+                                            <tr>
+                                                <td><input name="txtTglAwal" type="date" class="form-control" value="<?php echo $awalTgl; ?>"></td>
+                                                <td><input name="txtTglAkhir" type="date" class="form-control" value="<?php echo $akhirTgl; ?>"></td>
+                                                <td><button type="submit" name="btnTampil" class="btn btn-success center-block">Tampilkan</button></td>
+                                            </tr>
+                                            
+                                      </tbody>
+                                    </table>
+                                        </div>
+                            </form>
+                                </div>    
+                        </div>
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -199,12 +240,10 @@ error_reporting(0);
                                         </thead>
                                         <?php 
                                             include 'koneksi.php';
-                                            $sql = "SELECT * FROM tb_absen";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
                                             while ($row = mysqli_fetch_array($query)) {
-                                                
                                             
                                          ?>
                                         <tbody>
@@ -219,10 +258,7 @@ error_reporting(0);
                                                 <td>
                                                     <?php echo "<a href='http://maps.google.com/maps?q=$row[latitude],$row[longitude]' class='btn btn-primary' target='_blank'>Cek Lokasi</a>"; ?>                                                
                                                 </td>
-                                                <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
-
-
-                                                
+                                                <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>                                              
                                             </tr>
                                            <?php 
                                            $no++;
@@ -237,28 +273,16 @@ error_reporting(0);
             <!-- Modal -->
 
             <!-- End Modal -->
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <!-- END USER DATA-->
-                            </div>
-
-
-
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-
-                            </div>
-                        </div>
-                        <div class="row m-t-30">
-                            <div class="col-md-12">
-
-                            </div>
-                        </div>
-
-
-            
+            <table class="table table-borderless table-striped table-earning" >
+                                        
+                                        <tbody>
+                                            <tr> 
+                                                <td> 
+                                                <a href="cetak.php?awal=<?php echo $tglAwal; ?>&&akhir=<?php echo $tglAkhir; ?>" target="_blank" class="btn btn-primary">Cetak Laporan</a>                                              
+                                            </td>
+                                            </tr>    
+                                      </tbody>
+                                    </table>
                 </div>
             </div>
         </div>

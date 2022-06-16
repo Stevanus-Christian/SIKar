@@ -77,7 +77,7 @@ error_reporting(0);
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="admin2.php">
+                            <a class="js-arrow" href="admin.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 
@@ -123,7 +123,7 @@ error_reporting(0);
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="admin2.php">
+                            <a class="js-arrow" href="admin.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                           
                         </li>
@@ -132,7 +132,7 @@ error_reporting(0);
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data User</a>
                         </li>
                         <li>
@@ -192,9 +192,12 @@ error_reporting(0);
                                                 <th>No</th>
                                                 <th>NIP</th>
                                                 <th>Nama</th>
+                                                <th>Hari</th>
+                                                <th>Tanggal</th>
                                                 <th>Waktu</th>
+                                                <th>Status Absen</th>
+                                                <th>Lokasi</th>
                                                 <th>Aksi</th>
-                                                
                                             </tr>
                                         </thead>
                                         
@@ -214,15 +217,14 @@ error_reporting(0);
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $row['id_karyawan']; ?></td>
                                                 <td><?php echo $row ['nama']; ?></td>
-                                                <td><?php echo $row['waktu']; ?></td>
-                                                
-                                                    
-
+                                                <td><?php echo $row['hari']; ?></td>
+                                                <td><?php echo $row['tanggal']; ?></td>
+                                                <td><?php echo $row['waktu']; ?></td>  
+                                                <td><?php echo $row['status_absen']; ?></td>  
+                                                <td>
+                                                    <?php echo "<a href='http://maps.google.com/maps?q=$row[latitude],$row[longitude]' class='btn btn-primary' target='_blank'>Cek Lokasi</a>"; ?>                                                
                                                 </td>
-                                                <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
-
-
-                                                
+                                                <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>                                              
                                             </tr>
                                            <?php 
                                            $no++;
