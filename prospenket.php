@@ -16,7 +16,7 @@ error_reporting(0);
     <link rel="icon" href="assets/employee.png" type="image/png">
 
     <!-- Title Page-->
-    <title>Data Absen</title>
+    <title>Data Keterangan</title>
 
     <!-- Fontfaces CSS-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
@@ -164,7 +164,7 @@ error_reporting(0);
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="prospenab.php" method="POST">
+                            <form class="form-header" action="prospenket.php" method="POST">
                                 <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau Nama Karyawan" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
@@ -189,14 +189,13 @@ error_reporting(0);
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>NIP</th>
+                                                <th>No</th>   
+                                                <th>ID Karyawan</th>
                                                 <th>Nama</th>
-                                                <th>Hari</th>
-                                                <th>Tanggal</th>
+                                                <th>Keterangan</th>
+                                                <th>Alasan</th>
                                                 <th>Waktu</th>
-                                                <th>Status Absen</th>
-                                                <th>Lokasi</th>
+                                                <th>Bukti</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -204,7 +203,7 @@ error_reporting(0);
                                         <tbody>
                                               <?php 
                                             $cari = $_POST['cari'];
-                                            $sql = "SELECT * FROM tb_absen WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%'";
+                                            $sql = "SELECT * FROM tb_keterangan WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%'";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
@@ -214,17 +213,26 @@ error_reporting(0);
                                             
                                              ?>
                                             <tr>
-                                                <td><?php echo $no ?></td>
+                                                <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['id_karyawan']; ?></td>
-                                                <td><?php echo $row ['nama']; ?></td>
-                                                <td><?php echo $row['hari']; ?></td>
-                                                <td><?php echo $row['tanggal']; ?></td>
-                                                <td><?php echo $row['waktu']; ?></td>  
-                                                <td><?php echo $row['status_absen']; ?></td>  
+                                                <td><?php echo $row['nama']; ?></td>
+                                                <td><?php echo $row['keterangan']; ?></td>
+                                                <td><?php echo $row['alasan']; ?></td>
+                                                <td><?php echo $row['waktu']; ?></td> 
                                                 <td>
-                                                    <?php echo "<a href='http://maps.google.com/maps?q=$row[latitude],$row[longitude]' class='btn btn-primary' target='_blank'>Cek Lokasi</a>"; ?>                                                
+                                                    <?php 
+
+                                                    if ($row['bukti']!='') {
+                                                        echo "<img src=\" karyawan/modul/karyawan/images/$row[bukti]\" />";
+                                                    }else{
+                                                        echo "images";
+                                                    }
+
+                                                     ?>
+                                                    
+
                                                 </td>
-                                                <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>                                              
+                                                <td><a href="absen/hapus_keterangan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>                                            
                                             </tr>
                                            <?php 
                                            $no++;

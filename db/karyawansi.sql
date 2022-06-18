@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2022 at 09:21 AM
+-- Generation Time: Jun 18, 2022 at 09:50 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -48,7 +48,9 @@ INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`,
 (76, 1923240059, 'Stevanus Christian', 'Saturday', '11-06-2022', '10:36:31', 'Masuk', '-2.9738416', '104.7640647'),
 (80, 1923240059, 'Stevanus Christian', 'Monday', '13-06-2022', '19:41:52', 'Pulang', '-2.9627668', '104.7400274'),
 (81, 1923240059, 'Stevanus Christian', 'Wednesday', '15-06-2022', '17:27:04', 'Pulang', '-2.9627635', '104.7399998'),
-(83, 1923240059, 'Stevanus Christian', 'Thursday', '16-06-2022', '14:18:06', 'Masuk', '-2.9687808', '104.7658496');
+(83, 1923240059, 'Stevanus Christian', 'Thursday', '16-06-2022', '14:18:06', 'Masuk', '-2.9687808', '104.7658496'),
+(84, 1923240085, 'Tasya Angelya', 'Saturday', '18-06-2022', '10:48:47', 'Masuk', '-2.9737083', '104.7640244'),
+(85, 1923240001, 'Robby Pratama', 'Saturday', '18-06-2022', '10:49:14', 'Masuk', '-2.9736416', '104.7640947');
 
 -- --------------------------------------------------------
 
@@ -122,6 +124,7 @@ CREATE TABLE `tb_karyawan` (
 --
 
 INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
+(1923240001, 'robby', '8d05dd2f03981f86b56c23951f3f34d7', 'Robby Pratama', 'Palembang, 12 Desember 1992', 'Laki-laki', 'Katholik', 'KM. 20 Air Batu', '0812345678910', 'Helper', '180620220548245221e6fdd3f45_5221e6fdd5088.jpg'),
 (1923240059, 'steven', '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Sako', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
 (1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg');
 
@@ -194,7 +197,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `tb_daftar`

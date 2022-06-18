@@ -160,11 +160,22 @@ error_reporting(0);
         <?php
         $tglAwal = "";
         $tglAkhir = "";
+        $carinama = "";
 
-        if($_POST['txtTglAwal']!='' && $_POST['txtTglAkhir']!='') {
+        if($_POST['carinama']!='' && $_POST['txtTglAwal']!='' && $_POST['txtTglAkhir']!='') {
+            $carinama = $_POST['carinama'];
+            $tglAwal = $_POST['txtTglAwal'];
+            $tglAkhir = $_POST['txtTglAkhir'];
+            $sql = "SELECT * FROM tb_absen WHERE nama LIKE '%$carinama%' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+        }
+        elseif ($_POST['txtTglAwal']!='' && $_POST['txtTglAkhir']!='') {
             $tglAwal = $_POST['txtTglAwal'];
             $tglAkhir = $_POST['txtTglAkhir'];
             $sql = "SELECT * FROM tb_absen WHERE date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+        }
+        elseif ($_POST['carinama']!='') {
+            $carinama = $_POST['carinama'];
+            $sql = "SELECT * FROM tb_absen WHERE nama LIKE '%$carinama%'";
         }
         else{
             $sql = "SELECT * FROM tb_absen";
@@ -178,12 +189,7 @@ error_reporting(0);
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="prospenab.php" method="POST">
-                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau Nama Karyawan" />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
+                            <form></form>
                             <a href="export_excel.php"><button class="btn btn-success" target="_blank">Export Data</button></a>
                         </div>
                     </div>
@@ -199,7 +205,10 @@ error_reporting(0);
                     <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                <h2 class="title-1" style="text-align: center;">Data Absen Periode Tanggal <b><?php echo IndonesiaTgl($tglAwal); ?></b> s/d <b><?php echo IndonesiaTgl($tglAkhir); ?></b></h2>
+                                <h2 class="title-1" style="text-align: center;">Data Absen <b><?php echo ($carinama); ?></b></h2>
+                                </div>
+                                <div class="overview-wrap">
+                                <h2 class="title-1" style="text-align: center;">Periode Tanggal <b><?php echo IndonesiaTgl($tglAwal); ?></b> s/d <b><?php echo IndonesiaTgl($tglAkhir); ?></b></h2>
                                 </div>
                             </div>
                         </div>
@@ -212,11 +221,17 @@ error_reporting(0);
                                 
                                         <tbody>
                                             <tr>
-                                                <td><input name="txtTglAwal" type="date" class="form-control" value="<?php echo $awalTgl; ?>"></td>
-                                                <td><input name="txtTglAkhir" type="date" class="form-control" value="<?php echo $akhirTgl; ?>"></td>
-                                                <td><button type="submit" name="btnTampil" class="btn btn-success center-block">Tampilkan</button></td>
+                                                <td><input autocomplete="off" class="form-control" type="text" name="carinama" placeholder="Cari Nama Karyawan" /></td>
+                                                <td></td>
                                             </tr>
-                                            
+                                            <tr>
+                                                <td><input name="txtTglAwal" type="date" class="form-control" value="<?php echo $awalTgl; ?>"></td>
+                                                <td><input name="txtTglAkhir" type="date" class="form-control" value="<?php echo $akhirTgl; ?>"></td>                                         
+                                            </tr>
+                                            <tr>
+                                                <td><button type="submit" name="btnTampil" class="btn btn-success center-block">Tampilkan</button></td>
+                                                <td></td>
+                                            </tr>                               
                                       </tbody>
                                     </table>
                                         </div>
@@ -279,8 +294,8 @@ error_reporting(0);
                                         <tbody>
                                             <tr> 
                                                 <td> 
-                                                <a href="cetak.php?awal=<?php echo $tglAwal; ?>&&akhir=<?php echo $tglAkhir; ?>" target="_blank" class="btn btn-primary">Cetak Laporan</a>                                              
-                                            </td>
+                                                    <a href="cetak.php?awal=<?php echo $tglAwal; ?>&&akhir=<?php echo $tglAkhir; ?>&&cari=<?php echo $carinama; ?>" target="_blank" class="btn btn-primary">Cetak Laporan</a>                                              
+                                                </td>
                                             </tr>    
                                       </tbody>
                                     </table>

@@ -11,10 +11,22 @@ $awal	= $_GET['awal'];
 $akhir	= $_GET['akhir'];
 //$takhir=InggrisTgl($akhir);
 
-if($_GET['awal']!='' && $_GET['akhir']!='') {
+$cari = $_GET['cari'];
+
+if($_GET['cari']!='' && $_GET['awal']!='' && $_GET['akhir']!='') {
+    $carinama = $cari;
     $tglAwal 	= $awal;
 	$tglAkhir 	= $akhir;
+    $sql = "SELECT * FROM tb_absen WHERE nama LIKE '%$carinama%' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+}
+elseif ($_GET['awal']!='' && $_GET['akhir']!='') {
+    $tglAwal = $awal;
+    $tglAkhir = $akhir;
     $sql = "SELECT * FROM tb_absen WHERE date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+}
+elseif ($_GET['cari']!='') {
+    $carinama = $cari;
+    $sql = "SELECT * FROM tb_absen WHERE nama LIKE '%$carinama%'";
 }
 else{
     $sql = "SELECT * FROM tb_absen";
@@ -61,9 +73,18 @@ else{
 
 <?php 
 if (!empty($tglAwal)){ ?>
-    <center><h2>LAPORAN ABSENSI KARYAWAN</h2> <hr> <br></h4>PERIODE <b><?php echo IndonesiaTgl($awal); ?> s/d <?php echo IndonesiaTgl($akhir); ?></b>
+    <center><h2>LAPORAN ABSENSI KARYAWAN</h2> <hr> 
+    <br>
+    </h4>PERIODE <b><?php echo IndonesiaTgl($awal); ?> s/d <?php echo IndonesiaTgl($akhir); ?></b>
 <br /> </h4></center><?php 
-} else { ?>
+} 
+elseif (!empty($carinama)) {?>
+    <center><h2>LAPORAN ABSENSI KARYAWAN</h2> <hr> 
+    <br>
+    </h4>PERIODE <b><?php echo IndonesiaTgl($awal); ?> s/d <?php echo IndonesiaTgl($akhir); ?></b>
+<br /> </h4></center><?php
+}
+else { ?>
 <center><h2>LAPORAN ABSENSI KARYAWAN</h2></center>
 <hr>
 <?php } ?>

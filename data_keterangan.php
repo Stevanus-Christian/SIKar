@@ -163,6 +163,12 @@ session_start();
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
+                        <form class="form-header" action="prospenket.php" method="POST">
+                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau Nama Karyawan" />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -181,7 +187,7 @@ session_start();
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                <th>No</th>   
+                                 <th>No</th>   
                                  <th>ID Karyawan</th>
                                  <th>Nama</th>
                                  <th>Keterangan</th>
