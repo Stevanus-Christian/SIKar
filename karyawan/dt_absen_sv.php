@@ -22,7 +22,7 @@ if($cek>0){
 }
 else{
 
-	if($status_absen=="Masuk" && $waktu >= strtotime("10:00:00")){
+	if($status_absen=="Masuk" && $waktu > strtotime("10:00:00")){
 		echo "<script>alert('Batas absen masuk untuk hari ini sudah selesai!')</script>";
 		echo "<script>window.location.href = \"index.php?m=awal\" </script>";
 	}

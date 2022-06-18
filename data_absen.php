@@ -1,5 +1,6 @@
 <?php 
 require_once("koneksi.php");
+include 'library.php';
 error_reporting(0);
  ?>
 <!DOCTYPE html>
@@ -183,7 +184,7 @@ error_reporting(0);
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
-                            <a href="export_excel.php"><button class="btn btn-success" onclick="return confirm('Export data ke Microsoft Excel?');">Export Data</button></a>
+                            <a href="export_excel.php"><button class="btn btn-success" target="_blank">Export Data</button></a>
                         </div>
                     </div>
                 </div>
@@ -198,7 +199,7 @@ error_reporting(0);
                     <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                <h2 class="title-1" style="text-align: center;">Data Absen Periode Tanggal <b><?php echo ($tglAwal);?></b> s/d <b><?php echo ($tglAkhir);?></b></h2>
+                                <h2 class="title-1" style="text-align: center;">Data Absen Periode Tanggal <b><?php echo IndonesiaTgl($tglAwal); ?></b> s/d <b><?php echo IndonesiaTgl($tglAkhir); ?></b></h2>
                                 </div>
                             </div>
                         </div>
