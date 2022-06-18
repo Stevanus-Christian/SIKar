@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2022 at 09:50 AM
+-- Generation Time: Jun 18, 2022 at 03:27 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -89,15 +89,15 @@ CREATE TABLE `tb_jabatan` (
 --
 
 INSERT INTO `tb_jabatan` (`id`, `jabatan`) VALUES
+(11, 'Admin Lokasi'),
 (3, 'CEO'),
-(4, 'CTO'),
 (5, 'CFO'),
 (7, 'CMO'),
 (8, 'COO'),
-(10, 'Operator'),
-(11, 'Admin Lokasi'),
+(4, 'CTO'),
 (12, 'Finance Officer'),
-(13, 'Helper');
+(13, 'Helper'),
+(10, 'Operator');
 
 -- --------------------------------------------------------
 
@@ -174,13 +174,15 @@ ALTER TABLE `tb_daftar`
 -- Indexes for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jabatan` (`jabatan`);
 
 --
 -- Indexes for table `tb_karyawan`
 --
 ALTER TABLE `tb_karyawan`
-  ADD PRIMARY KEY (`id_karyawan`);
+  ADD PRIMARY KEY (`id_karyawan`),
+  ADD KEY `jabatan` (`jabatan`);
 
 --
 -- Indexes for table `tb_keterangan`
@@ -209,7 +211,7 @@ ALTER TABLE `tb_daftar`
 -- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tb_keterangan`
@@ -226,6 +228,12 @@ ALTER TABLE `tb_keterangan`
 --
 ALTER TABLE `tb_absen`
   ADD CONSTRAINT `tb_absen_ibfk_1` FOREIGN KEY (`id_karyawan`) REFERENCES `tb_karyawan` (`id_karyawan`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tb_karyawan`
+--
+ALTER TABLE `tb_karyawan`
+  ADD CONSTRAINT `tb_karyawan_ibfk_1` FOREIGN KEY (`jabatan`) REFERENCES `tb_jabatan` (`jabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tb_keterangan`
