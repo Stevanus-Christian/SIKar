@@ -30,7 +30,7 @@ include ("koneksi.php");
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img src="assets/is.png" alt=""></a>
+          <a class="navbar-brand logo_h" href=""><img src="assets/mdp.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -109,31 +109,28 @@ include ("koneksi.php");
 
         <div class="container">
           <div class="row">
-            <div class="col-lg-4">
+          <div class="col-lg-4">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                 <span class="card-feature__icon">
-                 
-                </span>
-                <h3 class="card-feature__title">Facebook</h3>
-                <p class="card-feature__subtitle">Stevanus Christian</p>
+                <p class="card-feature__subtitle">Company Name</p>
+                <h2 style="font-weight: bold;">PT Nauli Citra Alam Khatulistiwa</h2>
+                </span>           
               </div>
             </div>
             <div class="col-lg-4">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                 <span class="card-feature__icon">
-                  
-                </span>
-                <h3 class="card-feature__title">Whatsapp</h3>
-                <p class="card-feature__subtitle">0898-2300-710</p>
+                <p class="card-feature__subtitle">Call Center</p>
+                <h2 style="font-weight: bold;">(0853) 6781 9898</h2> 
+                </span>              
               </div>
             </div>
             <div class="col-lg-4">
               <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                 <span class="card-feature__icon">
-                
-                </span>
-                <h3 class="card-feature__title">LinkedIn</h3>
-                <p class="card-feature__subtitle">Stevanus Christian</p>
+                <p class="card-feature__subtitle">Company Address</p>
+                <h2 style="font-weight: bold;">Jl. Boulevard Citra Grand City No. 15</h2>
+                </span>           
               </div>
             </div>
           </div>
