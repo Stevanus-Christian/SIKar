@@ -27,7 +27,7 @@ if($status_absen == "Masuk"){
 		}
 }
 elseif($status_absen == "Pulang"){
-	$perintah = "SELECT * FROM tb_absen WHERE id_karyawan='$id_karyawan' and tanggal='$tanggal' and waktu_pulang IS NOT NULL";
+	$perintah = "SELECT * FROM tb_absen WHERE id_karyawan='$id_karyawan' and tanggal='$tanggal' and waktu_pulang !=''";
 	$eksekusi = mysqli_query($koneksi, $perintah);
 	$cek = mysqli_affected_rows($koneksi);
 	

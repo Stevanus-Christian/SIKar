@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2022 at 03:27 PM
+-- Generation Time: Jul 16, 2022 at 11:17 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -33,45 +33,23 @@ CREATE TABLE `tb_absen` (
   `nama` varchar(255) NOT NULL,
   `hari` varchar(250) NOT NULL,
   `tanggal` varchar(250) NOT NULL,
-  `waktu` varchar(255) NOT NULL,
+  `waktu_masuk` varchar(255) DEFAULT NULL,
+  `waktu_pulang` varchar(250) DEFAULT NULL,
   `status_absen` varchar(100) NOT NULL,
-  `latitude` varchar(250) NOT NULL,
-  `longitude` varchar(250) NOT NULL
+  `latitude` varchar(250) DEFAULT NULL,
+  `longitude` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_absen`
 --
 
-INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu`, `status_absen`, `latitude`, `longitude`) VALUES
-(75, 1923240059, 'Stevanus Christian', 'Wednesday', '08-06-2022', '18:45:14', 'Pulang', '-2.9668694', '104.7404383'),
-(76, 1923240059, 'Stevanus Christian', 'Saturday', '11-06-2022', '10:36:31', 'Masuk', '-2.9738416', '104.7640647'),
-(80, 1923240059, 'Stevanus Christian', 'Monday', '13-06-2022', '19:41:52', 'Pulang', '-2.9627668', '104.7400274'),
-(81, 1923240059, 'Stevanus Christian', 'Wednesday', '15-06-2022', '17:27:04', 'Pulang', '-2.9627635', '104.7399998'),
-(83, 1923240059, 'Stevanus Christian', 'Thursday', '16-06-2022', '14:18:06', 'Masuk', '-2.9687808', '104.7658496'),
-(84, 1923240085, 'Tasya Angelya', 'Saturday', '18-06-2022', '10:48:47', 'Masuk', '-2.9737083', '104.7640244'),
-(85, 1923240001, 'Robby Pratama', 'Saturday', '18-06-2022', '10:49:14', 'Masuk', '-2.9736416', '104.7640947');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_daftar`
---
-
-CREATE TABLE `tb_daftar` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_daftar`
---
-
-INSERT INTO `tb_daftar` (`id`, `username`, `password`) VALUES
-(2, 'admin', 'admin'),
-(12, 'steven', 'steven'),
-(13, 'tasya', 'tasya');
+INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu_masuk`, `waktu_pulang`, `status_absen`, `latitude`, `longitude`) VALUES
+(102, 1923240059, 'Stevanus Christian', 'Sabtu', '16-07-2022', '12:31:58', '12:33:30', 'Hadir', '-2.9278101', '104.7637733'),
+(103, 1923240085, 'Tasya Angelya', 'Sabtu', '16-07-2022', '15:45:45', '15:54:19', 'Hadir', '', ''),
+(104, 1923240001, 'Robby Pratama', 'Sabtu', '16-07-2022', '15:56:14', '15:57:37', 'Hadir', '', ''),
+(105, 1923240001, 'Robby Pratama', 'Sabtu', '16-07-2022', '', '', 'Sakit', '', ''),
+(106, 1923240085, 'Tasya Angelya', 'Sabtu', '16-07-2022', '', '', 'Izin', '', '');
 
 -- --------------------------------------------------------
 
@@ -140,6 +118,8 @@ CREATE TABLE `tb_keterangan` (
   `nama` varchar(255) NOT NULL,
   `keterangan` varchar(255) NOT NULL,
   `alasan` text NOT NULL,
+  `hari` varchar(250) NOT NULL,
+  `tanggal` varchar(250) NOT NULL,
   `waktu` varchar(255) NOT NULL,
   `bukti` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -148,10 +128,30 @@ CREATE TABLE `tb_keterangan` (
 -- Dumping data for table `tb_keterangan`
 --
 
-INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `waktu`, `bukti`) VALUES
-(68, 1923240059, 'Stevanus Christian', 'Sakit', 'Selamat pagi, saya izin tidak masuk kerja dikarenakan saya sedang sakit. Untuk surat keterangan sakitnya terlampir. Terima kasih', 'Saturday, 30-04-2022 01:23:19 PM', '30042022082422Danshi no Blog.jpg'),
-(70, 1923240085, 'Tasya Angelya', 'Izin', 'Pagi pak saya izin tidak masuk kerja hari ini dikarenakan ada urusan keluarga. Terimakasih atas pengertiannya.', 'Saturday, 30-04-2022 01:27:09 PM', '30042022082743izin.jpg'),
-(78, 1923240059, 'Stevanus Christian', 'Izin', 'Saya izin karena ada urusan keluarga. Terimakasih', 'Thursday, 16-06-2022 14:19:05', '16062022092006surat-izin-kerja-menikah.jpg');
+INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`, `hari`, `tanggal`, `waktu`, `bukti`) VALUES
+(80, 1923240001, 'Robby Pratama', 'Sakit', 'Pagi pak/bu, hari ini saya izin tidak masuk kerja dikarenakan sakit. Harap dimaklumi. Surat sakit terlampir. Terimakasih', 'Sabtu', '16-07-2022', '15:58:53', '1607202211004720220611_122322.jpg'),
+(81, 1923240085, 'Tasya Angelya', 'Izin', 'Saya izin cuti menikah selama 6 hari dimulai hari senin 18 juli sampai sabtu 23 juli. Terimakasih', 'Sabtu', '16-07-2022', '16:01:54', '16072022110321surat-izin-kerja-menikah.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
+--
+
+CREATE TABLE `tb_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+INSERT INTO `tb_user` (`id`, `username`, `password`) VALUES
+(2, 'admin', 'admin'),
+(12, 'steven', 'steven'),
+(13, 'tasya', 'tasya');
 
 --
 -- Indexes for dumped tables
@@ -163,12 +163,6 @@ INSERT INTO `tb_keterangan` (`id`, `id_karyawan`, `nama`, `keterangan`, `alasan`
 ALTER TABLE `tb_absen`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_karyawan` (`id_karyawan`);
-
---
--- Indexes for table `tb_daftar`
---
-ALTER TABLE `tb_daftar`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_jabatan`
@@ -192,6 +186,12 @@ ALTER TABLE `tb_keterangan`
   ADD KEY `id_karyawan` (`id_karyawan`);
 
 --
+-- Indexes for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -199,13 +199,7 @@ ALTER TABLE `tb_keterangan`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
-
---
--- AUTO_INCREMENT for table `tb_daftar`
---
-ALTER TABLE `tb_daftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
@@ -217,7 +211,13 @@ ALTER TABLE `tb_jabatan`
 -- AUTO_INCREMENT for table `tb_keterangan`
 --
 ALTER TABLE `tb_keterangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

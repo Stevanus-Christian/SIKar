@@ -18,19 +18,35 @@ if($_GET['cari']!='' && $_GET['awal']!='' && $_GET['akhir']!='') {
     $tglAwal 	= $awal;
 	$tglAkhir 	= $akhir;
     $sql = "SELECT * FROM tb_absen WHERE nama LIKE '%$carinama%' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+    $hadir = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Hadir' AND nama LIKE '%$carinama%' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'");
+    $izin = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Izin' AND nama LIKE '%$carinama%' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'");
+    $sakit = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Sakit' AND nama LIKE '%$carinama%' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'");    
 }
 elseif ($_GET['awal']!='' && $_GET['akhir']!='') {
     $tglAwal = $awal;
     $tglAkhir = $akhir;
     $sql = "SELECT * FROM tb_absen WHERE date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'";
+    $hadir = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Hadir' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'");
+    $izin = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Izin' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'");
+    $sakit = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Sakit' AND date_format(str_to_date(tanggal, '%d-%m-%Y'), '%Y-%m-%d') BETWEEN '".$tglAwal."' AND '".$tglAkhir."'");
 }
 elseif ($_GET['cari']!='') {
     $carinama = $cari;
     $sql = "SELECT * FROM tb_absen WHERE nama LIKE '%$carinama%'";
+    $hadir = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Hadir' AND nama LIKE '%$carinama%'");
+    $izin = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Izin' AND nama LIKE '%$carinama%'");
+    $sakit = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Sakit' AND nama LIKE '%$carinama%'");
 }
 else{
     $sql = "SELECT * FROM tb_absen";
+    $hadir = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Hadir'");
+    $izin = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Izin'");
+    $sakit = mysqli_query($koneksi, "SELECT * FROM tb_absen WHERE status_absen LIKE 'Sakit'");
 }
+
+$jumlah_hadir = mysqli_num_rows($hadir);
+$jumlah_izin = mysqli_num_rows($izin);
+$jumlah_sakit = mysqli_num_rows($sakit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,6 +139,9 @@ else { ?>
                                                                                 }
 									?>
                                 </tbody>
+                                <th  ><strong> Total Hadir </strong></th><th  ><strong><?php echo $jumlah_hadir; ?></strong></th>
+                                <th  ><strong> Total Sakit</strong></th><th  ><strong><?php echo $jumlah_sakit; ?></strong></th>
+                                <th  ><strong> Total Izin  </strong></th><th  ><strong><?php echo $jumlah_izin; ?></strong></th>
                                 
                             </table>
 </form>
