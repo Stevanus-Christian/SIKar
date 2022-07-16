@@ -1,5 +1,7 @@
 <?php 
 error_reporting(0);
+include '../koneksi.php';
+include '../library.php';
 ?>
 
 <!DOCTYPE html>
@@ -216,7 +218,7 @@ error_reporting(0);
                         <!-- FORM -->
                         <div class="row">
                            <div class="table-responsive table--no-card m-b-30">
-                            <form class="Form" action="dt_absen_sv.php" method="post" autocomplete="off">
+                            <form class="Form" action="dt_absen_sv.php" method="post" autocomplete="off" id="absen">
                                 <div class="form-group">
                                 <table class="table table-borderless table-striped table-earning" >
                                 
@@ -238,7 +240,7 @@ error_reporting(0);
 
                                             <tr>
                                                 <td>Hari</td>
-                                                <td><input type="text" class="form-control" value="<?php echo date('l' ); ?>" name="hari" readonly="" ></td>
+                                                <td><input type="text" class="form-control" value="<?php echo $hari_ini; ?>" name="hari" readonly="" ></td>
                                             </tr>
                                             
                                             <tr>
@@ -256,16 +258,33 @@ error_reporting(0);
                                                 <td><input type="text" class="form-control" value="" name="longitude" readonly="" ></td>
                                             </tr>
 
-                                            <tr>
-                                                <input type="hidden" class="form-control" value="<?php echo date('H:i:s' ); ?>" name="waktu" readonly="" >
-                                                <td></td>
-                                                <td><button type="submit" value="Masuk" name="simpan" class="btn btn-success center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 200px;">Absen Masuk</button></td>
-                                            </tr>
+                                            <?php
+                                            $id_karyawan = $_SESSION['idsi'];
+                                            $tanggal = date('d-m-Y' );
+                                            $status = 'Hadir';
+                                            $perintah = "SELECT * FROM tb_absen WHERE id_karyawan='$id_karyawan' and tanggal='$tanggal' and status_absen='$status'";
+                                            $eksekusi = mysqli_query($koneksi, $perintah);
+                                            $cek = mysqli_affected_rows($koneksi);
                                             
-                                            <tr>
+                                            if($cek>0){
+                                                ?>
+                                                <tr>
+                                                <input type="hidden" class="form-control" value="<?php echo date('H:i:s' ); ?>" name="waktu_pulang" readonly="" >
                                                 <td></td>
                                                 <td><button type="submit" value="Pulang" name="simpan" class="btn btn-success center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 200px;">Absen Pulang</button></td>
                                             </tr>
+                                                <?php
+                                            }
+                                            else{
+                                                ?>
+                                                <tr>
+                                                <input type="hidden" class="form-control" value="<?php echo date('H:i:s' ); ?>" name="waktu_masuk" readonly="" >
+                                                <td></td>
+                                                <td><button type="submit" value="Masuk" name="simpan" class="btn btn-success center-block" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 200px;">Absen Masuk</button></td>
+                                            </tr>
+                                                <?php
+                                            }
+                                            ?>         
                                       </tbody>
                                     </table>
                                         </div>

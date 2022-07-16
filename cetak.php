@@ -95,7 +95,8 @@ else { ?>
                                                 <th>Nama</th>
                                                 <th>Hari</th>
                                                 <th>Tanggal</th>
-                                                <th>Waktu</th>   
+                                                <th>Waktu Masuk</th> 
+                                                <th>Waktu Pulang</th>    
                                                 <th>Status Absen</th>
                                 </thead>
                                 <tbody>
@@ -113,7 +114,8 @@ else { ?>
                                                                                         <td><?php echo $row ['nama']; ?></td>
                                                                                         <td><?php echo $row['hari']; ?></td>
                                                                                         <td><?php echo $row['tanggal']; ?></td>
-                                                                                        <td><?php echo $row['waktu']; ?></td>  
+                                                                                        <td><?php echo $row['waktu_masuk']; ?></td>  
+                                                                                        <td><?php echo $row['waktu_pulang']; ?></td>  
                                                                                         <td><?php echo $row['status_absen']; ?></td>      
                                                                                     </tr>
                                         <?php 

@@ -3,7 +3,7 @@ include '../koneksi.php';
 
 $id = $_GET['id'];
 
-$sql_h = "DELETE FROM tb_daftar WHERE id = '$id'";
+$sql_h = "DELETE FROM tb_user WHERE id = '$id'";
 $query = mysqli_query($koneksi, $sql_h);
 
 if ($query) {

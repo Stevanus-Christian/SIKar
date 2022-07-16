@@ -190,7 +190,7 @@ error_reporting(0);
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form></form>
-                            <a href="export_excel.php"><button class="btn btn-success" target="_blank">Export Data</button></a>
+                            <a href="export_excel.php?awal=<?php echo $tglAwal; ?>&&akhir=<?php echo $tglAkhir; ?>&&cari=<?php echo $carinama; ?>" class="btn btn-success" target="_blank">Export Data</button></a>
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,8 @@ error_reporting(0);
                                                 <th>Nama</th>
                                                 <th>Hari</th>
                                                 <th>Tanggal</th>
-                                                <th>Waktu</th>
+                                                <th>Waktu Masuk</th>
+                                                <th>Waktu Pulang</th>
                                                 <th>Status Absen</th>
                                                 <th>Lokasi</th>
                                                 <th>Aksi</th>
@@ -269,7 +270,8 @@ error_reporting(0);
                                                 <td><?php echo $row ['nama']; ?></td>
                                                 <td><?php echo $row['hari']; ?></td>
                                                 <td><?php echo $row['tanggal']; ?></td>
-                                                <td><?php echo $row['waktu']; ?></td>  
+                                                <td><?php echo $row['waktu_masuk']; ?></td>  
+                                                <td><?php echo $row['waktu_pulang']; ?></td>
                                                 <td><?php echo $row['status_absen']; ?></td>  
                                                 <td>
                                                     <?php echo "<a href='http://maps.google.com/maps?q=$row[latitude],$row[longitude]' class='btn btn-primary' target='_blank'>Cek Lokasi</a>"; ?>                                                

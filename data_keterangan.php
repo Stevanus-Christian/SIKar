@@ -192,6 +192,8 @@ session_start();
                                  <th>Nama</th>
                                  <th>Keterangan</th>
                                  <th>Alasan</th>
+                                 <th>Hari</th>
+                                 <th>Tanggal</th>
                                  <th>Waktu</th>
                                  <th>Bukti</th>
                                

@@ -235,7 +235,7 @@ error_reporting(0);
                                         </thead>
                                         <?php 
                                             include 'koneksi.php';
-                                            $sql = "SELECT * FROM tb_daftar";
+                                            $sql = "SELECT * FROM tb_user";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;

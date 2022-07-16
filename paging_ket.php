@@ -31,6 +31,8 @@ while ($row=mysqli_fetch_array($data_karyawan)) {
                                                 <td><?php echo $row['nama']; ?></td>
                                                 <td><?php echo $row['keterangan']; ?></td>
                                                 <td><?php echo $row['alasan']; ?></td>
+                                                <td><?php echo $row['hari']; ?></td>
+                                                <td><?php echo $row['tanggal']; ?></td>
                                                 <td><?php echo $row['waktu']; ?></td>
                                                
                                                 <td>

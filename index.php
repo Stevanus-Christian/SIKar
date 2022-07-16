@@ -82,16 +82,27 @@ include ("koneksi.php");
           <h1> LOGIN </h1>
         
         </div>
-        <br>
-        <br>
-        <br>
-        <ul class="list-inline" id="chart-skill">
-          <li><a href="login.php" target="_blank"><button class="btn btn-warning" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 300px;">Login Admin</button></a>
-          </li><br>
-          <li><a href="karyawan/login_karyawan.php" target="_blank"><button class="btn btn-primary" style="size: 50px; padding: 14px 40px; border-radius: 12px; width: 300px;">Login Karyawan</button></a>
-          </li>
-          
-        </ul>
+        <div class="main-agileinfo">
+      <div class="agileits-top">
+        <form action="proses_login.php" method="post">
+          <input class="text" type="text" name="username" placeholder="Username" required=""><br>
+        
+          <input class="text" type="password" name="password" placeholder="Password" required=""><br>
+          <select class="form-control" name="akses" required="">
+	          <option value="">-- Login Sebagai --</option>
+	          <option value="Admin">Admin</option>
+	          <option value="Karyawan">Karyawan</option>
+          </select>
+          <div class="wthree-text">
+            <label class="anim">
+            </label>
+            <div class="clear"> </div>
+          </div>
+          <input type="submit" value="Login">
+        </form>
+      
+      </div>
+    </div>
       </div>
     </div>
     </section>

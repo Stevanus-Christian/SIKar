@@ -1,6 +1,6 @@
 <?php 
 error_reporting(0);
-
+include '../library.php';
  ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ error_reporting(0);
     <link rel="icon" href="../assets/employee.png" type="image/png">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>Keterangan</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -216,9 +216,14 @@ error_reporting(0);
                                             	<td><textarea name="alasan" class="form-control" required=""></textarea></td>
                                             </TR>
 
-                                             <tr>
-                                                <td>Waktu</td>
-                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('l, d-m-Y H:i:s' ); ?>" name="waktu"></td>
+                                            <tr>
+                                                <td>Hari</td>
+                                                <td><input type="text" class="form-control" value="<?php echo $hari_ini; ?>" name="hari" readonly="" ></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>Tanggal</td>
+                                                <td><input type="text" class="form-control" value="<?php echo date('d-m-Y' ); ?>" name="tanggal" readonly="" ></td>
                                             </tr>
 
                                            <tr>
@@ -227,6 +232,7 @@ error_reporting(0);
                                            </tr>
 
                                             <tr>
+                                                <input type="hidden" class="form-control" value="<?php echo date('H:i:s' ); ?>" name="waktu" readonly="" >
                                                 <td><button type="submit" name="simpan" class="btn btn-primary">Simpan</button></td>
                                                 <td><input type="reset" name="" value="Hapus" class="btn btn-danger"></td>
                                             </tr>

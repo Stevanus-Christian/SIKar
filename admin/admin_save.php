@@ -8,7 +8,7 @@ if (isset($_POST['simpan'])) {
 	$password = $_POST['password'];
 }
 
-$save = "INSERT INTO tb_daftar SET username='$username', password='$password'";
+$save = "INSERT INTO tb_user SET username='$username', password='$password'";
 mysqli_query($koneksi, $save);
 
 if ($save) {
