@@ -85,14 +85,10 @@ include ("koneksi.php");
         <div class="main-agileinfo">
       <div class="agileits-top">
         <form action="proses_login.php" method="post">
-          <input class="text" type="text" name="username" placeholder="Username" required=""><br>
+          <input class="text" type="text" name="username" placeholder="Username/ ID Karyawan" required=""><br>
         
-          <input class="text" type="password" name="password" placeholder="Password" required=""><br>
-          <select class="form-control" name="akses" required="">
-	          <option value="">-- Login Sebagai --</option>
-	          <option value="Admin">Admin</option>
-	          <option value="Karyawan">Karyawan</option>
-          </select>
+          <input class="text" type="password" name="password" placeholder="Password" required="">
+          
           <div class="wthree-text">
             <label class="anim">
             </label>

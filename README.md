@@ -9,15 +9,16 @@ Absen Karyawan - Sistem informasi karyawan merupakan aplikasi absensi berbasis w
 1. Dashboard Admin, dimana admin bisa mengontrol aplikasi, ini seperti menambahkan, melihat, mengubah atau menghapus data.
 2. Dashboard Karyawan, dimana karyawan bisa melakukan absensi mandiri dan mengisi form izin dan sakit.
 3. Session, sistem ini memungkinkan setiap karyawan melakukan absensi berdasarkan sesi nya masing - masing untuk mencegah penyalahgunaan data.
-4. Export data absen ke file PDF & Microsoft Excel untuk memudahkan proses rekapitulasi absensi karyawan.
-5. Fitur Lacak Lokasi (Geolocation).
+4. Perhitungan total Hadir, Sakit, dan Izin secara otomatis setiap karyawan setiap bulan.
+5. Export data absen ke file PDF & Microsoft Excel.
+6. Fitur Lacak Lokasi (Geolocation).
 
 -> Login default admin : 
-  1. username = admin
-  2. password = admin
+  1. username = steven
+  2. password = steven
   
 -> Login default karyawan : 
-  1. username = steven
+  1. username = 1923240059
   2. password = steven
   
 ## License
@@ -27,7 +28,7 @@ Stevanus-Christian/SIKar is licensed under the
 
 <h2>Disclaimer for AbsenSIKaryawan</h2>
 
-<p>All the information on this website - https://naulicitraalamkhatulistiwa.000webhostapp.com/ - is published in good faith and for general information purpose only. AbsenSIKaryawan does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (AbsenSIKaryawan), is strictly at your own risk. AbsenSIKaryawan will not be liable for any losses and/or damages in connection with the use of our website.</p>
+<p>All the information on this website - AbsenSIKaryawan - is published in good faith and for general information purpose only. AbsenSIKaryawan does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (AbsenSIKaryawan), is strictly at your own risk. AbsenSIKaryawan will not be liable for any losses and/or damages in connection with the use of our website.</p>
 
 <p>From our website, you can visit other websites by following hyperlinks to such external sites. While we strive to provide only quality links to useful and ethical websites, we have no control over the content and nature of these sites. These links to other websites do not imply a recommendation for all the content found on these sites. Site owners and content may change without notice and may occur before we have the opportunity to remove a link which may have gone 'bad'.</p>
 
