@@ -11,7 +11,6 @@ Absen Karyawan - Sistem informasi karyawan merupakan aplikasi absensi berbasis w
 3. Session, sistem ini memungkinkan setiap karyawan melakukan absensi berdasarkan sesi nya masing - masing untuk mencegah penyalahgunaan data.
 4. Export data absen ke file PDF & Microsoft Excel untuk memudahkan proses rekapitulasi absensi karyawan.
 5. Fitur Lacak Lokasi (Geolocation).
-6. Perhitungan jumlah hadir, sakit, dan izin karyawan secara otomatis.
 
 -> Login default admin : 
   1. username = admin
