@@ -201,14 +201,6 @@ session_start();
                                             </td>
                                             </tr>
                                             <tr>
-                                                <td>Username</td>
-                                                <td>
-                                                
-                                                <input type="text" class="form-control" required="" name="username" autocomplete="off">    
-                                                
-                                            </td>
-                                            </tr>
-                                            <tr>
                                                 <td>Password</td>
                                                 <td>
                                                 

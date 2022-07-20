@@ -4,7 +4,6 @@ include 'koneksi.php';
 if (isset($_POST['simpan'])) {
 	
 	$id_karyawan = $_POST['id_karyawan'];
-	$username = $_POST['username'];
 	$password = md5($_POST['password']);
 	$nama = $_POST['nama'];
 	$tmp_tgl_lahir = $_POST['tmp_tgl_lahir'];
@@ -33,7 +32,7 @@ echo "<script>alert('Data Dengan NIP = ".$id_karyawan." sudah ada') </script>";
 
 }
 
-$query = "INSERT INTO tb_karyawan set id_karyawan='$id_karyawan', username='$username', password='$password', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan', foto='$fotobaru'";
+$query = "INSERT INTO tb_karyawan set id_karyawan='$id_karyawan', password='$password', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan', foto='$fotobaru'";
 mysqli_query($koneksi, $query);
 
 if ($query) {

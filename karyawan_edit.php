@@ -72,13 +72,6 @@ session_start();
                                                 
                                             </td>
                                             </tr>
-                                         
-                                            <tr>
-                                                <td>Username</td>
-                                                <td>
-                                                <input type="text" class="form-control" name="username" autocomplete="off" value="<?php echo $d['username'];?>">
-                                                	</td>
-                                            </tr>
 
                                             <tr>
                                                 <td>Password</td>

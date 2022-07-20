@@ -212,13 +212,6 @@ error_reporting(0);
                                                 	<input type="text" class="form-control" name="nama" value="<?php echo $r['nama'];?>">
                                                 	</td>
                                             </tr>
-                                         
-                                            <tr>
-                                                <td>Username</td>
-                                                <td>
-                                                	<input type="text" class="form-control" name="username" value="<?php echo $r['username'];?>">
-                                                	</td>
-                                            </tr>
 
                                             <tr>
                                                 <td>Password</td>

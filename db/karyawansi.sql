@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2022 at 11:17 AM
+-- Generation Time: Jul 20, 2022 at 02:21 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -49,7 +49,10 @@ INSERT INTO `tb_absen` (`id`, `id_karyawan`, `nama`, `hari`, `tanggal`, `waktu_m
 (103, 1923240085, 'Tasya Angelya', 'Sabtu', '16-07-2022', '15:45:45', '15:54:19', 'Hadir', '', ''),
 (104, 1923240001, 'Robby Pratama', 'Sabtu', '16-07-2022', '15:56:14', '15:57:37', 'Hadir', '', ''),
 (105, 1923240001, 'Robby Pratama', 'Sabtu', '16-07-2022', '', '', 'Sakit', '', ''),
-(106, 1923240085, 'Tasya Angelya', 'Sabtu', '16-07-2022', '', '', 'Izin', '', '');
+(106, 1923240085, 'Tasya Angelya', 'Sabtu', '16-07-2022', '', '', 'Izin', '', ''),
+(107, 1923240059, 'Stevanus Christian', 'Rabu', '20-07-2022', '13:17:18', '13:17:49', 'Hadir', '-2.9738361', '104.7640582'),
+(108, 1923240085, 'Tasya Angelya', 'Rabu', '20-07-2022', '13:19:06', '13:19:23', 'Hadir', '-2.9736785', '104.7640929'),
+(109, 1923240100, 'Varelly Alvin', 'Rabu', '20-07-2022', '19:06:34', '19:08:16', 'Hadir', '', '');
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,6 @@ INSERT INTO `tb_jabatan` (`id`, `jabatan`) VALUES
 
 CREATE TABLE `tb_karyawan` (
   `id_karyawan` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `tmp_tgl_lahir` varchar(255) NOT NULL,
@@ -101,10 +103,11 @@ CREATE TABLE `tb_karyawan` (
 -- Dumping data for table `tb_karyawan`
 --
 
-INSERT INTO `tb_karyawan` (`id_karyawan`, `username`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
-(1923240001, 'robby', '8d05dd2f03981f86b56c23951f3f34d7', 'Robby Pratama', 'Palembang, 12 Desember 1992', 'Laki-laki', 'Katholik', 'KM. 20 Air Batu', '0812345678910', 'Helper', '180620220548245221e6fdd3f45_5221e6fdd5088.jpg'),
-(1923240059, 'steven', '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Sako', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
-(1923240085, 'tasya', 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg');
+INSERT INTO `tb_karyawan` (`id_karyawan`, `password`, `nama`, `tmp_tgl_lahir`, `jenkel`, `agama`, `alamat`, `no_tel`, `jabatan`, `foto`) VALUES
+(1923240001, '8d05dd2f03981f86b56c23951f3f34d7', 'Robby Pratama', 'Palembang, 12 Desember 1992', 'Laki-laki', 'Katholik', 'KM. 20 Air Batu', '0812345678910', 'Helper', '180620220548245221e6fdd3f45_5221e6fdd5088.jpg'),
+(1923240059, '6ed61d4b80bb0f81937b32418e98adca', 'Stevanus Christian', 'Jakarta, 23 Desember 2001', 'Laki-laki', 'Kristen', 'Sako', '08982300710', 'CEO', '30042022072444IMG_20220328_115225_358.jpg'),
+(1923240085, 'a208fb8e30446eb35afa20a299a94962', 'Tasya Angelya', 'Palembang, 08 Agustus 2001', 'Perempuan', 'Buddha', 'Simpang Kades', '085367819898', 'CTO', '3004202207395820220423-064447.jpg'),
+(1923240100, '8392b63be6e2fd43f962c8533a84ae39', 'Varelly Alvin', 'Palembang, 1 Januari 2000', 'Laki-laki', 'Kristen', 'Patal', '081234567891', 'Admin Lokasi', '20072022140420IMG_20210322_094812.jpg');
 
 -- --------------------------------------------------------
 
@@ -199,7 +202,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`

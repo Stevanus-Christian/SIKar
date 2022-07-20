@@ -17,7 +17,6 @@
     if($ketemu>0){
       session_start();
       $_SESSION['idsi']   = $b['id_karyawan'];
-      $_SESSION['usersi'] = $b['username'];
       $_SESSION['namasi'] = $b['nama'];
       $_SESSION['ttlsi']  = $b['tmp_tgl_lahir'];
       $_SESSION['jenkelsi'] = $b['jenkel'];
