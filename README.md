@@ -27,6 +27,10 @@ Stevanus-Christian/SIKar is licensed under the
 <br>
 <b>Creative Commons Zero v1.0 Universal</b>
 
+-> Catatan(PENTING) :
+    <i>Sebelum mengimport database, pastikan anda membuat database sesuai dengan nama database yang ada di dalam folder db, yaitu 'karyawansi'</i>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <h2>Disclaimer for AbsenSIKaryawan</h2>
 
 <p>All the information on this website - AbsenSIKaryawan - is published in good faith and for general information purpose only. AbsenSIKaryawan does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website (AbsenSIKaryawan), is strictly at your own risk. AbsenSIKaryawan will not be liable for any losses and/or damages in connection with the use of our website.</p>
@@ -42,7 +46,3 @@ Stevanus-Christian/SIKar is licensed under the
 <h2>Update</h2>
 
 <p>Should we update, amend or make any changes to this document, those changes will be prominently posted here.</p>
-
--> Catatan(PENTING) :
-    <i>Sebelum mengimport database, pastikan anda membuat database sesuai dengan nama database yang ada di dalam folder db, yaitu 'karyawansi'</i>
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
