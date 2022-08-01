@@ -9,9 +9,10 @@ Absen Karyawan - Sistem informasi karyawan merupakan aplikasi absensi berbasis w
 1. Dashboard Admin, dimana admin bisa mengontrol aplikasi, ini seperti menambahkan, melihat, mengubah atau menghapus data.
 2. Dashboard Karyawan, dimana karyawan bisa melakukan absensi mandiri dan mengisi form izin dan sakit.
 3. Session, sistem ini memungkinkan setiap karyawan melakukan absensi berdasarkan sesi nya masing - masing untuk mencegah penyalahgunaan data.
-4. Perhitungan total Hadir, Sakit, dan Izin secara otomatis setiap karyawan setiap bulan.
+4. Perhitungan total Hadir, Sakit, dan Izin secara otomatis setiap karyawan berdasarkan rentang tanggal yang ditentukan.
 5. Export data absen ke file PDF & Microsoft Excel.
-6. Fitur Lacak Lokasi (Geolocation).
+6. Fitur Lacak Lokasi saat melakukan absensi dengan Google Maps.
+7. Tampilan UI yang menarik.
 
 -> Login default admin : 
   1. username = steven
